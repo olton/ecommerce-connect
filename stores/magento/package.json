@@ -1,0 +1,8 @@
+{
+  "name": "@ecommerce-connect/magento",
+  "version": "1.0.0",
+  "description": "Ecommerce Connect integration for Magento",
+  "author": "UPC Ecommerce",
+  "license": "MIT",
+  "main": "src/index.js"
+}
