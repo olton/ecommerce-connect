@@ -1,0 +1,48 @@
+# IDE
+.idea
+.vscode
+
+# Dependencies
+node_modules
+**/node_modules
+
+# Build output
+dist
+**/dist
+build
+**/build
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# PHP (WooCommerce, Magento, PrestaShop, OpenCart, Joomla)
+vendor
+**/vendor
+composer.lock
+
+# Cache
+.cache
+**/.cache
+*.cache
+
+# Coverage
+coverage
+**/coverage
+.nyc_output
+
+# Temp
+tmp
+temp
+*.tmp

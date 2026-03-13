@@ -1,0 +1,8 @@
+{
+  "name": "@ecommerce-connect/opencart",
+  "version": "1.0.0",
+  "description": "Ecommerce Connect integration for OpenCart",
+  "author": "UPC Ecommerce",
+  "license": "MIT",
+  "main": "src/index.js"
+}

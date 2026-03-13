@@ -1,0 +1,8 @@
+{
+  "name": "@ecommerce-connect/certificates",
+  "version": "1.0.0",
+  "description": "Certificate utilities for Ecommerce Connect",
+  "author": "UPC Ecommerce",
+  "license": "MIT",
+  "main": "src/index.js"
+}
