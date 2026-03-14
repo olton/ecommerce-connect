@@ -1,0 +1,74 @@
+name: Build and Release Assets
+
+on:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js (latest)
+        uses: actions/setup-node@v4
+        with:
+          node-version: current
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: Collect ZIP assets from stores/*/dist
+        id: collect_assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+
+          files=(stores/*/dist/*.zip)
+
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "No zip files found in stores/*/dist. Continuing without assets."
+            echo "has_files=false" >> "$GITHUB_OUTPUT"
+            echo "files=" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "has_files=true" >> "$GITHUB_OUTPUT"
+
+          {
+            echo "files<<EOF"
+            for file in "${files[@]}"; do
+              echo "$file"
+            done
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Create release and upload assets
+        if: steps.collect_assets.outputs.has_files == 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: assets-${{ github.run_number }}
+          name: Assets Build #${{ github.run_number }}
+          target_commitish: ${{ github.sha }}
+          generate_release_notes: true
+          files: ${{ steps.collect_assets.outputs.files }}
+
+      - name: Create release without assets
+        if: steps.collect_assets.outputs.has_files != 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: assets-${{ github.run_number }}
+          name: Assets Build #${{ github.run_number }}
+          target_commitish: ${{ github.sha }}
+          generate_release_notes: true
