@@ -62,6 +62,7 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
 
         $this->init_form_fields();
         $this->init_settings();
+        $this->normalize_translatable_default_settings();
 
         $this->merchant_id = $this->get_option('merchant_id');
         $this->terminal_id = $this->get_option('terminal_id');
@@ -94,6 +95,30 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
         add_action('woocommerce_admin_order_data_after_order_details', [$this, 'render_admin_capture_form']);
 
         add_filter('nocache_headers', array($this, 'no_store_cache_headers'));
+    }
+
+    /**
+     * Keep default text settings translatable across site language switches.
+     *
+     * WooCommerce stores admin values in DB, so default text can get stuck in
+     * its original language. If the saved value is empty or still equal to the
+     * source string, expose it in the currently active locale.
+     */
+    protected function normalize_translatable_default_settings()
+    {
+        $default_checkout_description = 'Pay with eCommerceConnect (Debit/Credit Cards)';
+
+        if (!isset($this->settings['description'])) {
+            $this->settings['description'] = __($default_checkout_description, 'woocommerce-gateway-ecommerceconnect');
+
+            return;
+        }
+
+        $saved_description = trim((string) $this->settings['description']);
+
+        if ('' === $saved_description || $default_checkout_description === $saved_description) {
+            $this->settings['description'] = __($default_checkout_description, 'woocommerce-gateway-ecommerceconnect');
+        }
     }
 
     public function no_store_cache_headers($headers)
