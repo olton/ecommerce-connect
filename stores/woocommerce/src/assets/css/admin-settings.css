@@ -81,6 +81,39 @@
   border-radius: 8px;
 }
 
+.ecommconnect-settings-info {
+  margin: 0 0 12px;
+  padding: 12px 14px;
+  border: 1px solid #c9d8ea;
+  border-left: 4px solid var(--ecc-accent);
+  border-radius: 10px;
+  background: linear-gradient(180deg, #f8fcff 0%, #f1f8f5 100%);
+  color: #18324a;
+  box-shadow: 0 4px 12px rgba(15, 42, 61, 0.05);
+}
+
+.ecommconnect-settings-info strong {
+  font-weight: 600;
+}
+
+.ecommconnect-settings-info pre {
+  margin: 8px 0 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px dashed #f0b2ae;
+  background: #fff7f7;
+  color: #aa2e25;
+  overflow-x: auto;
+}
+
+.ecommconnect-settings-info code {
+  color: inherit;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.45;
+  white-space: nowrap;
+}
+
 .ecommconnect-settings-page {
   margin: 0;
   padding: 0;
@@ -233,6 +266,10 @@
   .ecommconnect-settings-title .woocommerce-page-title-action,
   .ecommconnect-settings-title .page-title-action {
     margin-left: 0;
+  }
+
+  .ecommconnect-settings-info {
+    padding: 10px 12px;
   }
 
   .ecommconnect-settings-page {

@@ -592,15 +592,19 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
                         ?>
                     </h2>
 
-          <h4>
-            <strong><?php printf(
-                // translators: %1$s is the return URL, %2$s is the transaction ID or order code shown in HTML.
-                __('Please, enter this link into the notify url field in the merchant portal for return customer back to your store after payment <span style="color: red"><pre><code>%2$s</code></pre></span>',
-                    'woocommerce-gateway-ecommerceconnect'),
-                'https://ecconnect.upc.ua',
-                WC()->api_request_url(strtolower(get_class($this)))
-            ); ?></strong>
-          </h4>
+          <div class="ecommconnect-settings-info" role="status" aria-live="polite">
+              <?php
+                echo wp_kses_post(
+                    sprintf(
+                        // translators: %1$s is the return URL, %2$s is the transaction ID or order code shown in HTML.
+                        __('Please, enter this link into the notify url field in the merchant portal for return customer back to your store after payment <span style="color: red"><pre><code>%2$s</code></pre></span>',
+                            'woocommerce-gateway-ecommerceconnect'),
+                        'https://ecconnect.upc.ua',
+                        WC()->api_request_url(strtolower(get_class($this)))
+                    )
+                );
+                ?>
+          </div>
             <?php
             echo '<div class="ecommconnect-settings-page">';
             echo '<div class="ecommconnect-settings-card">';
