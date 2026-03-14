@@ -64,6 +64,51 @@ function runI18nAll(rootDir, stagedSrcDir) {
 	}
 }
 
+function replaceVersionPlaceholders(stagedSrcDir, version) {
+	const marker = "__VERSION__";
+	const allowedExtensions = new Set([".php", ".md"]);
+
+	let filesChanged = 0;
+	let placeholdersReplaced = 0;
+
+	function walk(dirPath) {
+		const entries = fs.readdirSync(dirPath, { withFileTypes: true });
+
+		for (const entry of entries) {
+			const fullPath = path.join(dirPath, entry.name);
+
+			if (entry.isDirectory()) {
+				walk(fullPath);
+				continue;
+			}
+
+			const ext = path.extname(entry.name).toLowerCase();
+			const isAllowedFile = allowedExtensions.has(ext) || entry.name === ".env";
+			if (!isAllowedFile) {
+				continue;
+			}
+
+			const content = fs.readFileSync(fullPath, "utf8");
+			if (!content.includes(marker)) {
+				continue;
+			}
+
+			const matchCount = content.split(marker).length - 1;
+			const updated = content.replaceAll(marker, version);
+
+			if (updated !== content) {
+				fs.writeFileSync(fullPath, updated, "utf8");
+				filesChanged += 1;
+				placeholdersReplaced += matchCount;
+			}
+		}
+	}
+
+	walk(stagedSrcDir);
+
+	return { filesChanged, placeholdersReplaced };
+}
+
 function ensureMoCoverage(stagedSrcDir) {
 	const languagesDir = path.join(stagedSrcDir, "languages");
 	if (!fs.existsSync(languagesDir)) {
@@ -130,6 +175,10 @@ async function main() {
 
 	try {
 		fs.cpSync(srcDir, stagingSrcDir, { recursive: true });
+		const replacementResult = replaceVersionPlaceholders(stagingSrcDir, version);
+		console.log(
+			`Version placeholders replaced: ${replacementResult.placeholdersReplaced} in ${replacementResult.filesChanged} file(s)`
+		);
 		runI18nAll(rootDir, stagingSrcDir);
 		ensureMoCoverage(stagingSrcDir);
 		await createZipFromDir(stagingSrcDir, archivePath);
