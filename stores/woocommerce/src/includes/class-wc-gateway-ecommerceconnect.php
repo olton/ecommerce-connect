@@ -65,6 +65,7 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
         $this->init_form_fields();
         $this->init_settings();
         $this->normalize_translatable_default_settings();
+        $this->sync_masked_secret_previews_to_settings();
 
         $this->merchant_id = $this->get_option('merchant_id');
         $this->terminal_id = $this->get_option('terminal_id');
@@ -377,6 +378,20 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
         $preview = $this->get_masked_secret_preview($field_key);
 
         return '' !== $preview && $preview === $value;
+    }
+
+    protected function sync_masked_secret_previews_to_settings()
+    {
+        $secret_fields = array(
+            'private_key' => $this->id . '_private_key',
+            'private_key_test' => $this->id . '_private_key_test',
+            'work_crt' => $this->id . '_work_crt',
+            'test_crt' => $this->id . '_test_crt',
+        );
+
+        foreach ($secret_fields as $setting_key => $secret_option_key) {
+            $this->settings[$setting_key] = $this->get_masked_secret_preview($secret_option_key);
+        }
     }
 
     public function get_private_key_status_description($field_key, $description, $title)
