@@ -84,7 +84,7 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
         $this->skip_form = 'yes' === $this->get_option('skip_form') ? 'yes' : 'no';
         $this->is_pre_autorization = 'yes' === $this->get_option('is_pre_autorization') ? 'yes' : 'no';
         $this->custom_success_status = str_replace('wc-', '', $this->get_option('custom_success_status'));
-        $this->enable_alt_currency = 'yes' === $this->get_option('enable_alt_currency', 'yes') ? 'yes' : 'no';
+        $this->enable_alt_currency = 'yes' === $this->get_option('enable_alt_currency', 'no') ? 'yes' : 'no';
 
         if ('yes' === $this->get_option('testmode')) {
             $this->add_testmode_admin_settings_notice();
@@ -204,7 +204,7 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
                 'label' => __('Show alternative currency selector', 'woocommerce-gateway-ecommerceconnect'),
                 'type' => 'checkbox',
                 'description' => __('Enable to display and use the alternative display currency selector (USD/EUR).', 'woocommerce-gateway-ecommerceconnect'),
-                'default' => 'yes',
+                'default' => 'no',
             ),
             'alt_currency' => [
                 'title' => __('Alternative display currency (AltCurrency)', 'woocommerce-gateway-ecommerceconnect'),
