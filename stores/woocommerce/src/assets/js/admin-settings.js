@@ -2,19 +2,37 @@
   function initAltCurrencyToggle() {
     var toggle = document.getElementById('woocommerce_ecommerceconnect_enable_alt_currency');
     var altCurrencySelect = document.getElementById('woocommerce_ecommerceconnect_alt_currency');
+    var eurRateInput = document.getElementById('woocommerce_ecommerceconnect_eur_conversion');
+    var usdRateInput = document.getElementById('woocommerce_ecommerceconnect_usd_conversion');
 
-    if (!toggle || !altCurrencySelect) {
+    if (!toggle) {
       return;
     }
 
     function syncAltCurrencyVisibility() {
       var isEnabled = !!toggle.checked;
-      var altCurrencyRow = altCurrencySelect.closest('tr');
+      var altCurrencyRow = altCurrencySelect ? altCurrencySelect.closest('tr') : null;
+      var eurRateRow = eurRateInput ? eurRateInput.closest('tr') : null;
+      var usdRateRow = usdRateInput ? usdRateInput.closest('tr') : null;
 
-      altCurrencySelect.disabled = !isEnabled;
+      if (altCurrencySelect) {
+        altCurrencySelect.disabled = !isEnabled;
+      }
+      if (eurRateInput) {
+        eurRateInput.disabled = !isEnabled;
+      }
+      if (usdRateInput) {
+        usdRateInput.disabled = !isEnabled;
+      }
 
       if (altCurrencyRow) {
         altCurrencyRow.style.display = isEnabled ? '' : 'none';
+      }
+      if (eurRateRow) {
+        eurRateRow.style.display = isEnabled ? '' : 'none';
+      }
+      if (usdRateRow) {
+        usdRateRow.style.display = isEnabled ? '' : 'none';
       }
     }
 
