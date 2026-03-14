@@ -5,9 +5,20 @@
   "description": "Monorepo for ecommerce platform integrations",
   "author": "UPC Ecommerce",
   "license": "MIT",
+  "packageManager": "npm@11.6.2",
   "workspaces": [
     "stores/*",
     "utils/*",
     "packages/*"
-  ]
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "i18n:woocommerce": "npm run --workspace @ecommerce-connect/woocommerce i18n:all"
+  },
+  "devDependencies": {
+    "archiver": "^7.0.1",
+    "oxlint": "^1.55.0",
+    "prettier": "^3.8.1",
+    "turbo": "^2.8.16"
+  }
 }

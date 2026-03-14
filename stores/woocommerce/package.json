@@ -1,8 +1,16 @@
 {
   "name": "@ecommerce-connect/woocommerce",
-  "version": "1.0.0",
+  "version": "8.4.1",
   "description": "Ecommerce Connect integration for WooCommerce",
   "author": "UPC Ecommerce",
   "license": "MIT",
-  "main": "src/index.js"
+  "type": "module",
+  "scripts": {
+    "start": "docker compose -f docker-compose.yml up",
+    "build": "node build.js",
+    "i18n:update-pot": "node scripts/i18n.mjs update-pot",
+    "i18n:update-po-all": "node scripts/i18n.mjs update-po-all",
+    "i18n:compile-mo-all": "node scripts/i18n.mjs compile-mo-all",
+    "i18n:all": "node scripts/i18n.mjs all"
+  }
 }

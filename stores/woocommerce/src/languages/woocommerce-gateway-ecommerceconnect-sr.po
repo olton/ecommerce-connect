@@ -1,0 +1,394 @@
+# Copyright (C) 2025 upc.ua
+# This file is distributed under the same license as the eCommerceConnect Gateway plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: eCommerceConnect Gateway 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/woocommerce-"
+"ecommerceconnect-gateway\n"
+"POT-Creation-Date: 2025-07-22T09:13:46+00:00\n"
+"PO-Revision-Date: 2025-07-22 16:20+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.6\n"
+"X-Domain: woocommerce-gateway-ecommerceconnect\n"
+
+#. Plugin Name of the plugin
+#: woocommerce-gateway-ecommerceconnect.php
+msgid "eCommerceConnect Gateway"
+msgstr "eCommerceConnect Гатеваи"
+
+#. Plugin URI of the plugin
+#: woocommerce-gateway-ecommerceconnect.php
+msgid "https://ecconnect.upc.ua"
+msgstr "https://ecconnect.upc.ua"
+
+#. Description of the plugin
+#: woocommerce-gateway-ecommerceconnect.php
+msgid ""
+"UPC WooCommerce plugin enables you to easily accept payments through your "
+"Woocommerce store"
+msgstr ""
+"UPC WooCommerce додатак вам омогућава да лако прихватате плаћања путем ваше "
+"Woocommerce продавнице"
+
+#. Author of the plugin
+#: woocommerce-gateway-ecommerceconnect.php
+msgid "upc.ua"
+msgstr "upc.ua"
+
+#. Author URI of the plugin
+#: woocommerce-gateway-ecommerceconnect.php
+msgid "https://upc.ua"
+msgstr "https://upc.ua"
+
+#: includes/class-wc-gateway-ecommerceconnect-privacy.php:10
+#: includes/class-wc-gateway-ecommerceconnect.php:39
+#: includes/class-wc-gateway-ecommerceconnect.php:108
+#: includes/class-wc-gateway-ecommerceconnect.php:459
+#: includes/class-wc-gateway-ecommerceconnect.php:482
+msgid "eCommerceConnect"
+msgstr "eCommerceConnect"
+
+#: includes/class-wc-gateway-ecommerceconnect-privacy.php:12
+msgid "WooCommerce eCommerceConnect Order Data"
+msgstr "Подаци о поруџбинама у WooCommerce eCommerceConnect-у"
+
+#: includes/class-wc-gateway-ecommerceconnect-privacy.php:14
+msgid "WooCommerce eCommerceConnect Data"
+msgstr "Подаци о WooCommerce eCommerceConnect-у"
+
+#. translators: %1$s and %2$s are opening and closing anchor tags.
+#: includes/class-wc-gateway-ecommerceconnect-privacy.php:41
+#, php-format
+msgid ""
+"By using this extension, you may be storing personal data or sharing data "
+"with an external service. %1$sLearn more about how this works, including "
+"what you may want to include in your privacy policy.%2$s"
+msgstr ""
+"Коришћењем овог проширења, могуће је да чувате личне податке или делите "
+"податке са спољном услугом. %1$s Сазнајте више о томе како ово функционише, "
+"укључујући шта бисте можда желели да укључите у своју политику приватности. "
+"%2$s"
+
+#: includes/class-wc-gateway-ecommerceconnect-privacy.php:60
+msgid "Orders"
+msgstr "Наређења"
+
+#: includes/class-wc-gateway-ecommerceconnect-privacy.php:64
+msgid "eCommerceConnect token"
+msgstr "eCommerceConnect токен"
+
+#: includes/class-wc-gateway-ecommerceconnect-privacy.php:118
+msgid "eCommerceConnect Order Data Erased."
+msgstr "Подаци о поруџбини са eCommerceConnect-а су обрисани."
+
+#. translators: %1$s and %2$s are opening and closing <strong> tags.
+#: includes/class-wc-gateway-ecommerceconnect.php:42
+#, php-format
+msgid ""
+"Accept card payments on your website via %1$seCommerceConnect%2$s payment "
+"gateway"
+msgstr ""
+"Прихватите плаћања картицама на вашој веб страници путем %1$s "
+"eCommerceConnect %2$s платне капије"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:97
+msgid "Enable/Disable"
+msgstr "Омогући/онемогући"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:98
+msgid "Enable eCommerceConnect"
+msgstr "Омогућите eCommerceConnect"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:100
+msgid ""
+"This controls whether or not this gateway is enabled within WooCommerce."
+msgstr "Ово контролише да ли је овај пролаз омогућен унутар WooCommerce-а."
+
+#: includes/class-wc-gateway-ecommerceconnect.php:105
+msgid "Title"
+msgstr "Наслов"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:107
+msgid "This controls the title which the user sees during checkout."
+msgstr "Ово контролише наслов који корисник види током плаћања."
+
+#: includes/class-wc-gateway-ecommerceconnect.php:112
+msgid "Description"
+msgstr "Опис"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:114
+msgid "This controls the description which the user sees during checkout"
+msgstr "Ово контролише опис који корисник види током плаћања"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:119
+msgid "Payment Gateway Action URL"
+msgstr "URL радње пролаза за плаћање"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:121
+msgid "e.g. https://ecg.test.upc.ua or https://secure.upc.ua"
+msgstr "нпр. https://ecg.test.upc.ua или https://secure.upc.ua"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:124
+msgid "eCommerceConnect Sandbox"
+msgstr "eCommerceConnect Sandbox"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:126
+msgid "Place the payment gateway in test mode"
+msgstr "Поставите платни пролаз у тестни режим"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:130
+msgid "Merchant ID"
+msgstr "Merchant ID"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:132
+msgid "This is the Merchant ID, received from eCommerceConnect"
+msgstr "Ово је Merchant ID, примљен од eCommerceConnect-а"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:136
+msgid "Terminal ID"
+msgstr "Terminal ID"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:138
+msgid "This is the Terminal ID, received from eCommerceConnect"
+msgstr "Ово је Terminal ID, примљен од eCommerceConnect-а"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:142
+#: includes/class-wc-gateway-ecommerceconnect.php:147
+msgid "Private key"
+msgstr "Приватни кључ"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:146
+msgid "This is the Private key, received from eCommerceConnect"
+msgstr "Ово је приватни кључ, примљен од eCommerceConnect-а"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:151
+#: includes/class-wc-gateway-ecommerceconnect.php:156
+msgid "Private key for test mode"
+msgstr "Приватни кључ за тест режим"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:155
+msgid "This is the Private key for test mode, received from eCommerceConnect"
+msgstr "Ово је приватни кључ за тест режим, примљен од eCommerceConnect-а"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:160
+#: includes/class-wc-gateway-ecommerceconnect.php:165
+msgid "Work certificate"
+msgstr "Потврда о раду"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:164
+msgid ""
+"This is the Work certificate for signature verification from UPC e-Commerce "
+"Connect payment gateway"
+msgstr ""
+"Ово је радни сертификат за верификацију потписа са UPC e-Commerce Connect "
+"платне платформе"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:169
+#: includes/class-wc-gateway-ecommerceconnect.php:174
+msgid "Test certificate"
+msgstr "Тест сертификат"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:173
+msgid ""
+"This is the Test certificate for signature verification from UPC e-Commerce "
+"Connect payment gateway"
+msgstr ""
+"Ово је тест сертификат за верификацију потписа са UPC e-Commerce Connect "
+"платне мрежне платформе"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:178
+msgid "Status for Successful Withdrawal"
+msgstr "Статус успешног повлачења"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:180
+msgid ""
+"Set the current status of your WooCommerce order for the corresponding "
+"transaction"
+msgstr ""
+"Подесите тренутни статус ваше WooCommerce поруџбине за одговарајућу "
+"трансакцију"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:186
+msgid "eCommerceConnect interface language"
+msgstr "Језик интерфејса eCommerceConnect-а"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:188
+msgid "Set the payment gateway language"
+msgstr "Подесите језик платне капије"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:195
+#: includes/class-wc-gateway-ecommerceconnect.php:197
+msgid "Skip receipt page"
+msgstr "Прескочи страницу receipt"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:201
+#: includes/class-wc-gateway-ecommerceconnect.php:203
+#: includes/class-wc-gateway-ecommerceconnect.php:413
+msgid "Pre-authorization"
+msgstr "Пре-ауторизација"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:204
+msgid "For pre-authorization, check the checkbox"
+msgstr "За претходну ауторизацију, означите поље за потврду"
+
+#. translators: %s is the setting name.
+#: includes/class-wc-gateway-ecommerceconnect.php:228
+#, php-format
+msgid "%s updated successfully."
+msgstr "%s је успешно ажурирано."
+
+#. translators: 1: Field name, 2: Field name again.
+#: includes/class-wc-gateway-ecommerceconnect.php:235
+#, php-format
+msgid "%1$s cannot be empty. Please enter a %2$s."
+msgstr "%1$s не може бити празно. Молимо вас да унесете %2$s."
+
+#. translators: %s is the field name.
+#: includes/class-wc-gateway-ecommerceconnect.php:261
+#, php-format
+msgid "A %s is currently saved."
+msgstr "Тренутно је сачувано %s."
+
+#. translators: 1: Field label, 2: Field label again.
+#: includes/class-wc-gateway-ecommerceconnect.php:269
+#, php-format
+msgid "No %1$s is currently saved. Please enter a %2$s."
+msgstr "Тренутно није сачуван ниједан %1$s. Молимо вас да унесете %2$s."
+
+#: includes/class-wc-gateway-ecommerceconnect.php:294
+msgid "Sandbox Merchant ID currently in use"
+msgstr "Sandbox Merchant ID се тренутно користи"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:295
+msgid "Sandbox Terminal ID currently in use"
+msgstr "Sandbox Terminal ID се тренутно користи"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:324
+msgid "Your store uses a currency that ecommerceconnect doesn't support yet."
+msgstr ""
+"Ваша продавница користи валуту коју ecommerceconnect још увек не подржава."
+
+#: includes/class-wc-gateway-ecommerceconnect.php:326
+msgid "You forgot to fill your merchant ID."
+msgstr "Заборавили сте да попуните свој merchant ID."
+
+#: includes/class-wc-gateway-ecommerceconnect.php:328
+msgid "You forgot to fill your terminal ID."
+msgstr "Заборавили сте да попуните вашег terminal ID."
+
+#: includes/class-wc-gateway-ecommerceconnect.php:351
+msgid ""
+"To use eCommerceConnect as a payment provider, you need to fix the problems "
+"below:"
+msgstr ""
+"Да бисте користили eCommerceConnect као добављача плаћања, потребно је да "
+"решите следеће проблеме:"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:462
+msgid "Return to payments"
+msgstr "Вратите се на плаћања"
+
+#. translators: %1$s is the return URL, %2$s is the transaction ID or order code shown in HTML.
+#: includes/class-wc-gateway-ecommerceconnect.php:470
+#, php-format
+msgid ""
+"Send this link to a <a href=\"%1$s\" target=\"_blank\" rel=\"noopener "
+"noreferrer\">UPC specialist</a> to return to the store after payment <span "
+"style=\"color: red\"><pre><code>%2$s</code></pre></span>"
+msgstr ""
+"Пошаљите овај линк <a href=\"%1$s\" target=\"_blank\" rel=\"noopener "
+"noreferrer\">UPC стручњаку</a> да бисте га вратили у продавницу након "
+"плаћања <span style=\"color: red\"><pre><code>%2$s</code></pre></span>"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:485
+msgid "Gateway Disabled"
+msgstr "Гатеваи Дисаблед"
+
+#. translators: %1$s and %2$s are opening and closing anchor or <strong> tags.
+#: includes/class-wc-gateway-ecommerceconnect.php:490
+#, php-format
+msgid ""
+"Choose UAH as your store currency in %1$sGeneral Settings%2$s to enable the "
+"eCommerceCcnnect Gateway."
+msgstr ""
+"Изаберите UAH као валуту ваше продавнице у %1$s Општим подешавањима %2$s да "
+"бисте омогућили eCommerceConnect Gateway."
+
+#: includes/class-wc-gateway-ecommerceconnect.php:607
+msgid "Purchase"
+msgstr "Куповина"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:609
+msgid "Back"
+msgstr "Назад"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:632
+msgid ""
+"Thank you for your order, please click the button below to pay with "
+"eCommerceConnect."
+msgstr ""
+"Хвала вам на поруџбини, кликните на дугме испод да бисте платили путем "
+"eCommerceConnect-а."
+
+#: includes/class-wc-gateway-ecommerceconnect.php:678
+msgid "Capture via UPC"
+msgstr "Capture via UPC"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:683
+msgid "Оплатити"
+msgstr "Плати"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:730
+msgid "Запит не відбувся: "
+msgstr "Захтев није успео: "
+
+#: includes/class-wc-gateway-ecommerceconnect.php:748
+msgid "Captured via UPC Gateway"
+msgstr "Снимљено путем UPC Gateway-а"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:751
+msgid "Capture success. Order moved to Processing"
+msgstr "Снимање је успешно. Поруџбина је премештена у обраду"
+
+#: includes/class-wc-gateway-ecommerceconnect.php:765
+msgid "Invalid response from UPC"
+msgstr "Неважећи одговор од UPC-а"
+
+#: woocommerce-gateway-ecommerceconnect.php:49
+msgid "Settings"
+msgstr "Подешавања"
+
+#: woocommerce-gateway-ecommerceconnect.php:50
+msgid "Support"
+msgstr "Подршка"
+
+#. translators: %s is the anchor tag link to WooCommerce download page.
+#: woocommerce-gateway-ecommerceconnect.php:106
+#, php-format
+msgid ""
+"WooCommerce eCommerceConnect Gateway requires WooCommerce to be installed "
+"and active. You can download %s here."
+msgstr ""
+"WooCommerce eCommerceConnect Gateway захтева да WooCommerce буде инсталиран "
+"и активан. Можете преузети %s овде."
+
+#: build/index.js:1
+msgid "eCommerceConnect payment method"
+msgstr "Начин плаћања eCommerceConnect-а"
+
+msgid "Transaction Currency"
+msgstr "Валута трансакције"
+
+msgid "Select the currency to be used for this payment method (WooCommerce current: <strong>%s</strong>)"
+msgstr "Изаберите валуту која ће се користити за овај начин плаћања (тренутна валута WooCommerce-а: <strong>%s</strong>)"
+
+msgid "Alternative display currency (AltCurrency)"
+msgstr "Алтернативна валута за приказ (AltCurrency)"
+
+msgid "Used for displaying price in another currency (must be USD or EUR). Used only for visual purposes."
+msgstr "Користи се за приказивање цене у другој валути (мора бити USD или EUR). Користи се само у визуелне сврхе."

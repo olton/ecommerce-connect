@@ -1,0 +1,303 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: eCommerceConnect Gateway 8.4.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/woocommerce-"
+"ecommerceconnect-gateway\n"
+"POT-Creation-Date: 2025-07-22T09:13:46+00:00\n"
+"PO-Revision-Date: 2025-07-22 12:46+0300\n"
+"Last-Translator: Serhii Pimenov\n"
+"Language-Team: UPC ECommerce\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: woocommerce-gateway-ecommerceconnect\n"
+"X-Generator: Poedit 3.6\n"
+
+#. Plugin Name of the plugin
+msgid "eCommerceConnect Gateway"
+msgstr "eCommerceConnect Gateway"
+
+#. Plugin URI of the plugin
+msgid "https://ecconnect.upc.ua"
+msgstr "https://ecconnect.upc.ua"
+
+#. Description of the plugin
+msgid ""
+"UPC WooCommerce plugin enables you to easily accept payments through your "
+"Woocommerce store"
+msgstr ""
+"UPC WooCommerce plugin enables you to easily accept payments through your "
+"Woocommerce store"
+
+#. Author of the plugin
+msgid "upc.ua"
+msgstr "upc.ua"
+
+#. Author URI of the plugin
+msgid "https://upc.ua"
+msgstr "https://upc.ua"
+
+msgid "eCommerceConnect"
+msgstr "eCommerceConnect"
+
+msgid "WooCommerce eCommerceConnect Order Data"
+msgstr "WooCommerce eCommerceConnect Order Data"
+
+msgid "WooCommerce eCommerceConnect Data"
+msgstr "WooCommerce eCommerceConnect Data"
+
+#. translators: %1$s and %2$s are opening and closing anchor tags.
+msgid ""
+"By using this extension, you may be storing personal data or sharing data "
+"with an external service. %1$sLearn more about how this works, including "
+"what you may want to include in your privacy policy.%2$s"
+msgstr ""
+"By using this extension, you may be storing personal data or sharing data "
+"with an external service. %1$sLearn more about how this works, including "
+"what you may want to include in your privacy policy.%2$s"
+
+msgid "Orders"
+msgstr "Orders"
+
+msgid "eCommerceConnect token"
+msgstr "eCommerceConnect token"
+
+msgid "eCommerceConnect Order Data Erased."
+msgstr "eCommerceConnect Order Data Erased."
+
+#. translators: %1$s and %2$s are opening and closing <strong> tags.
+msgid ""
+"Accept card payments on your website via %1$seCommerceConnect%2$s payment "
+"gateway"
+msgstr ""
+"Accept card payments on your website via %1$seCommerceConnect%2$s payment "
+"gateway"
+
+msgid "Enable/Disable"
+msgstr "Enable/Disable"
+
+msgid "Enable eCommerceConnect"
+msgstr "Enable eCommerceConnect"
+
+msgid ""
+"This controls whether or not this gateway is enabled within WooCommerce."
+msgstr ""
+"This controls whether or not this gateway is enabled within WooCommerce."
+
+msgid "Title"
+msgstr "Title"
+
+msgid "This controls the title which the user sees during checkout."
+msgstr "This controls the title which the user sees during checkout."
+
+msgid "Description"
+msgstr "Description"
+
+msgid "This controls the description which the user sees during checkout"
+msgstr "This controls the description which the user sees during checkout"
+
+msgid "Payment Gateway Action URL"
+msgstr "Payment Gateway Action URL"
+
+msgid "e.g. https://ecg.test.upc.ua or https://secure.upc.ua"
+msgstr "e.g. https://ecg.test.upc.ua or https://secure.upc.ua"
+
+msgid "eCommerceConnect Sandbox"
+msgstr "eCommerceConnect Sandbox"
+
+msgid "Place the payment gateway in test mode"
+msgstr "Place the payment gateway in test mode"
+
+msgid "Merchant ID"
+msgstr "Merchant ID"
+
+msgid "This is the Merchant ID, received from eCommerceConnect"
+msgstr "This is the Merchant ID, received from eCommerceConnect"
+
+msgid "Terminal ID"
+msgstr "Terminal ID"
+
+msgid "This is the Terminal ID, received from eCommerceConnect"
+msgstr "This is the Terminal ID, received from eCommerceConnect"
+
+msgid "Private key"
+msgstr "Private key"
+
+msgid "This is the Private key, received from eCommerceConnect"
+msgstr "This is the Private key, received from eCommerceConnect"
+
+msgid "Private key for test mode"
+msgstr "Private key for test mode"
+
+msgid "This is the Private key for test mode, received from eCommerceConnect"
+msgstr "This is the Private key for test mode, received from eCommerceConnect"
+
+msgid "Work certificate"
+msgstr "Work certificate"
+
+msgid ""
+"This is the Work certificate for signature verification from UPC e-Commerce "
+"Connect payment gateway"
+msgstr ""
+"This is the Work certificate for signature verification from UPC e-Commerce "
+"Connect payment gateway"
+
+msgid "Test certificate"
+msgstr "Test certificate"
+
+msgid ""
+"This is the Test certificate for signature verification from UPC e-Commerce "
+"Connect payment gateway"
+msgstr ""
+"This is the Test certificate for signature verification from UPC e-Commerce "
+"Connect payment gateway"
+
+msgid "Status for Successful Withdrawal"
+msgstr "Status for Successful Withdrawal"
+
+msgid ""
+"Set the current status of your WooCommerce order for the corresponding "
+"transaction"
+msgstr ""
+"Set the current status of your WooCommerce order for the corresponding "
+"transaction"
+
+msgid "eCommerceConnect interface language"
+msgstr "eCommerceConnect interface language"
+
+msgid "Set the payment gateway language"
+msgstr "Set the payment gateway language"
+
+msgid "Skip receipt page"
+msgstr "Skip receipt page"
+
+msgid "Pre-authorization"
+msgstr "Pre-authorization"
+
+msgid "For pre-authorization, check the checkbox"
+msgstr "For pre-authorization, check the checkbox"
+
+#. translators: %s is the setting name.
+msgid "%s updated successfully."
+msgstr "%s updated successfully."
+
+#. translators: 1: Field name, 2: Field name again.
+msgid "%1$s cannot be empty. Please enter a %2$s."
+msgstr "%1$s cannot be empty. Please enter a %2$s."
+
+#. translators: %s is the field name.
+msgid "A %s is currently saved."
+msgstr "A %s is currently saved."
+
+#. translators: 1: Field label, 2: Field label again.
+msgid "No %1$s is currently saved. Please enter a %2$s."
+msgstr "No %1$s is currently saved. Please enter a %2$s."
+
+msgid "Sandbox Merchant ID currently in use"
+msgstr "Sandbox Merchant ID currently in use"
+
+msgid "Sandbox Terminal ID currently in use"
+msgstr "Sandbox Terminal ID currently in use"
+
+msgid "Your store uses a currency that ecommerceconnect doesn't support yet."
+msgstr "Your store uses a currency that ecommerceconnect doesn't support yet."
+
+msgid "You forgot to fill your merchant ID."
+msgstr "You forgot to fill your merchant ID."
+
+msgid "You forgot to fill your terminal ID."
+msgstr "You forgot to fill your terminal ID."
+
+msgid ""
+"To use eCommerceConnect as a payment provider, you need to fix the problems "
+"below:"
+msgstr ""
+"To use eCommerceConnect as a payment provider, you need to fix the problems "
+"below:"
+
+msgid "Return to payments"
+msgstr "Return to payments"
+
+#. translators: %1$s is the return URL, %2$s is the transaction ID or order
+#. code shown in HTML.
+msgid ""
+"Send this link to a <a href=\"%1$s\" target=\"_blank\" rel=\"noopener "
+"noreferrer\">UPC specialist</a> to return to the store after payment <span "
+"style=\"color: red\"><pre><code>%2$s</code></pre></span>"
+msgstr ""
+"Send this link to a <a href=\"%1$s\" target=\"_blank\" rel=\"noopener "
+"noreferrer\">UPC specialist</a> to return to the store after payment <span "
+"style=\"color: red\"><pre><code>%2$s</code></pre></span>"
+
+msgid "Gateway Disabled"
+msgstr "Gateway Disabled"
+
+#. translators: %1$s and %2$s are opening and closing anchor or <strong> tags.
+msgid ""
+"Choose UAH as your store currency in %1$sGeneral Settings%2$s to enable the "
+"eCommerceCcnnect Gateway."
+msgstr ""
+"Choose UAH as your store currency in %1$s General Settings %2$s to enable the "
+"eCommerceCcnnect Gateway."
+
+msgid "Purchase"
+msgstr "Purchase"
+
+msgid "Back"
+msgstr "Back"
+
+msgid ""
+"Thank you for your order, please click the button below to pay with "
+"eCommerceConnect."
+msgstr ""
+"Thank you for your order, please click the button below to pay with "
+"eCommerceConnect."
+
+msgid "Capture via UPC"
+msgstr "Capture via UPC"
+
+msgid "Оплатити"
+msgstr "Оплатити"
+
+msgid "Запит не відбувся: "
+msgstr "Запит не відбувся: "
+
+msgid "Captured via UPC Gateway"
+msgstr "Captured via UPC Gateway"
+
+msgid "Capture success. Order moved to Processing"
+msgstr "Capture success. Order moved to Processing"
+
+msgid "Invalid response from UPC"
+msgstr "Invalid response from UPC"
+
+msgid "Settings"
+msgstr "Settings"
+
+msgid "Support"
+msgstr "Support"
+
+#. translators: %s is the anchor tag link to WooCommerce download page.
+msgid ""
+"WooCommerce eCommerceConnect Gateway requires WooCommerce to be installed "
+"and active. You can download %s here."
+msgstr ""
+"WooCommerce eCommerceConnect Gateway requires WooCommerce to be installed "
+"and active. You can download %s here."
+
+msgid "eCommerceConnect payment method"
+msgstr "eCommerceConnect payment method"
+
+msgid "Transaction Currency"
+msgstr "Transaction Currency"
+
+msgid "Select the currency to be used for this payment method (WooCommerce current: <strong>%s</strong>)"
+msgstr "Select the currency to be used for this payment method (WooCommerce current: <strong>%s</strong>)"
+
+msgid "Alternative display currency (AltCurrency)"
+msgstr "Alternative display currency (AltCurrency)"
+
+msgid "Used for displaying price in another currency (must be USD or EUR). Used only for visual purposes."
+msgstr "Used for displaying price in another currency (must be USD or EUR). Used only for visual purposes."

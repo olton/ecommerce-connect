@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0FA58F"/>
+      <stop offset="1" stop-color="#0E766E"/>
+    </linearGradient>
+    <linearGradient id="spark" x1="20" y1="22" x2="44" y2="42" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F3FFFB"/>
+      <stop offset="1" stop-color="#CFF5EA"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="56" height="56" rx="16" fill="url(#bg)"/>
+  <path d="M16 33C16 26.9249 20.9249 22 27 22H30.5C32.433 22 34 23.567 34 25.5C34 27.433 32.433 29 30.5 29H27C24.7909 29 23 30.7909 23 33C23 35.2091 24.7909 37 27 37H37C43.0751 37 48 32.0751 48 26" stroke="url(#spark)" stroke-width="4" stroke-linecap="round"/>
+  <path d="M48 31C48 37.0751 43.0751 42 37 42H33.5C31.567 42 30 40.433 30 38.5C30 36.567 31.567 35 33.5 35H37C39.2091 35 41 33.2091 41 31C41 28.7909 39.2091 27 37 27H27C20.9249 27 16 31.9249 16 38" stroke="#E8FFF8" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="49" cy="15" r="5" fill="#F7FFFC" fill-opacity="0.92"/>
+  <path d="M49 12.5V17.5M46.5 15H51.5" stroke="#0E8D7E" stroke-width="2" stroke-linecap="round"/>
+</svg>

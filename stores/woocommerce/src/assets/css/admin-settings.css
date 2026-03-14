@@ -1,0 +1,271 @@
+:root {
+  --ecc-bg-1: #f6f8fb;
+  --ecc-bg-2: #eef3f8;
+  --ecc-card: #ffffff;
+  --ecc-border: #d8e1ec;
+  --ecc-text: #1f2937;
+  --ecc-muted: #5f6b7a;
+  --ecc-accent: #0f766e;
+  --ecc-accent-2: #115e59;
+  --ecc-row-hover: #eef8f5;
+  --ecc-danger: #b42318;
+  --ecc-radius: 14px;
+}
+
+.ecommconnect-settings-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 14px 0 12px;
+  padding: 12px 16px;
+  border: 1px solid #cbdced;
+  border-radius: 14px;
+  background:
+    radial-gradient(440px 120px at -4% 50%, rgba(20, 159, 135, 0.18), transparent 62%),
+    radial-gradient(560px 160px at 110% 50%, rgba(15, 118, 110, 0.2), transparent 62%),
+    linear-gradient(90deg, #f7fbff 0%, #eef7f5 100%);
+  color: #0f2a3d;
+  box-shadow: 0 8px 20px rgba(15, 42, 61, 0.08);
+}
+
+.ecommconnect-settings-title__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.ecommconnect-settings-title__icon {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  border-radius: 10px;
+  border: 1px solid rgba(15, 118, 110, 0.24);
+  background:
+    url("../images/brand-card.svg") center/20px 20px no-repeat,
+    linear-gradient(160deg, #ffffff 0%, #e8f8f1 80%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+.ecommconnect-settings-title__text {
+  color: #0f2a3d;
+  font-size: 28px;
+  font-weight: 750;
+  line-height: 1.15;
+  letter-spacing: 0.2px;
+}
+
+.ecommconnect-settings-title__badge {
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+  padding: 0 10px;
+  border-radius: 999px;
+  border: 1px solid #9cd8c8;
+  background: linear-gradient(180deg, #f3fcf9 0%, #e2f6ef 100%);
+  color: #0d6b61;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.24px;
+  text-transform: uppercase;
+}
+
+.ecommconnect-settings-title .woocommerce-page-title-action,
+.ecommconnect-settings-title .page-title-action {
+  margin-left: auto;
+  white-space: nowrap;
+  border-color: #a7b7c7;
+  background: #fff;
+  color: #1f3a52;
+  border-radius: 8px;
+}
+
+.ecommconnect-settings-page {
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--ecc-border);
+  border-radius: var(--ecc-radius);
+  background:
+    radial-gradient(900px 260px at -10% -20%, #dceef7 0%, transparent 60%),
+    radial-gradient(900px 260px at 110% -20%, #dff4ee 0%, transparent 60%),
+    linear-gradient(180deg, var(--ecc-bg-1) 0%, var(--ecc-bg-2) 100%);
+}
+
+.ecommconnect-settings-card {
+  background: var(--ecc-card);
+  border: 1px solid var(--ecc-border);
+  border-radius: 12px;
+  padding: 18px 36px;
+  box-shadow: 0 8px 24px rgba(16, 24, 40, 0.06);
+}
+
+.ecommconnect-settings-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-top: 6px !important;
+}
+
+.ecommconnect-settings-table tbody tr {
+  border-bottom: 1px solid #edf2f7;
+  transition: background-color .2s ease;
+}
+
+.ecommconnect-settings-table tbody tr:last-child {
+  border-bottom: 0;
+}
+
+.ecommconnect-settings-table tbody tr:hover {
+  background: var(--ecc-row-hover);
+}
+
+.ecommconnect-settings-table tbody tr th,
+.ecommconnect-settings-table tbody tr td {
+  padding-top: 14px !important;
+  padding-bottom: 14px !important;
+  vertical-align: top;
+}
+
+.ecommconnect-settings-table th {
+  color: var(--ecc-text);
+  font-weight: 600;
+  width: 280px;
+  padding-left: 12px !important;
+  padding-right: 16px !important;
+}
+
+.ecommconnect-settings-table td {
+  color: var(--ecc-text);
+}
+
+.ecommconnect-settings-table .forminp fieldset,
+.ecommconnect-settings-table .forminp p,
+.ecommconnect-settings-table .forminp > label {
+  position: relative;
+}
+
+.ecommconnect-settings-table .forminp .woocommerce-help-tip {
+  position: absolute;
+  left: -24px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 !important;
+  float: none !important;
+}
+
+.ecommconnect-settings-table .forminp-checkbox fieldset {
+  padding-left: 12px;
+}
+
+.ecommconnect-settings-table .description {
+  margin-top: 8px !important;
+  color: var(--ecc-muted) !important;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.ecommconnect-settings-table input[type="text"],
+.ecommconnect-settings-table input[type="number"],
+.ecommconnect-settings-table select,
+.ecommconnect-settings-table textarea {
+  width: 100%;
+  max-width: 640px;
+  border: 1px solid #cdd6e1 !important;
+  border-radius: 10px !important;
+  min-height: 40px;
+  padding: 8px 12px !important;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.ecommconnect-settings-table textarea {
+  min-height: 140px;
+  font-family: Consolas, Monaco, monospace;
+}
+
+.ecommconnect-settings-table input:focus,
+.ecommconnect-settings-table select:focus,
+.ecommconnect-settings-table textarea:focus {
+  border-color: var(--ecc-accent) !important;
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.14) !important;
+}
+
+.ecommconnect-settings-page .button-primary {
+  background: linear-gradient(180deg, var(--ecc-accent), var(--ecc-accent-2)) !important;
+  border-color: var(--ecc-accent-2) !important;
+  border-radius: 10px !important;
+  padding: 0 18px !important;
+  min-height: 38px;
+}
+
+.ecommconnect-settings-page strong[style*="color:#00a32a"] {
+  color: #137333 !important;
+}
+
+.ecommconnect-settings-page span[style*="color: #d63638"] {
+  color: var(--ecc-danger) !important;
+}
+
+@media (max-width: 960px) {
+  .ecommconnect-settings-title {
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 10px 12px;
+  }
+
+  .ecommconnect-settings-title__text {
+    font-size: 22px;
+  }
+
+  .ecommconnect-settings-title__icon {
+    width: 30px;
+    height: 30px;
+    flex-basis: 30px;
+    background-size: 18px 18px;
+  }
+
+  .ecommconnect-settings-title__badge {
+    height: 22px;
+    padding: 0 8px;
+    font-size: 11px;
+  }
+
+  .ecommconnect-settings-title .woocommerce-page-title-action,
+  .ecommconnect-settings-title .page-title-action {
+    margin-left: 0;
+  }
+
+  .ecommconnect-settings-page {
+    padding: 12px;
+  }
+
+  .ecommconnect-settings-card {
+    padding: 8px 10px 2px;
+  }
+
+  .ecommconnect-settings-table th,
+  .ecommconnect-settings-table td {
+    display: block;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .ecommconnect-settings-table th {
+    padding-bottom: 6px !important;
+  }
+
+  .ecommconnect-settings-table td {
+    padding-top: 4px !important;
+  }
+
+  .ecommconnect-settings-table .forminp .woocommerce-help-tip {
+    left: 0;
+    top: -24px;
+    transform: none;
+  }
+
+  .ecommconnect-settings-table .forminp-checkbox fieldset {
+    padding-left: 0;
+    padding-top: 12px;
+  }
+}

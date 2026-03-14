@@ -46,3 +46,7 @@ coverage
 tmp
 temp
 *.tmp
+.turbo
+.build-staging
+stores/woocommerce/src/languages/*.pot
+stores/woocommerce/src/languages/*.mo
