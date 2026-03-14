@@ -236,6 +236,7 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
             'private_key' => array(
                 'title' => __('Private key', 'woocommerce-gateway-ecommerceconnect'),
                 'type' => 'textarea',
+                'default' => $this->get_masked_secret_preview($this->id . '_private_key'),
                 'description' => $this->get_private_key_status_description(
                     $this->id . '_private_key',
                     __('This is the Private key, received from eCommerceConnect', 'woocommerce-gateway-ecommerceconnect'),
@@ -245,6 +246,7 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
             'private_key_test' => array(
                 'title' => __('Private key for test mode', 'woocommerce-gateway-ecommerceconnect'),
                 'type' => 'textarea',
+                'default' => $this->get_masked_secret_preview($this->id . '_private_key_test'),
                 'description' => $this->get_private_key_status_description(
                     $this->id . '_private_key_test',
                     __('This is the Private key for test mode, received from eCommerceConnect', 'woocommerce-gateway-ecommerceconnect'),
@@ -254,6 +256,7 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
             'work_crt' => array(
                 'title' => __('Work certificate', 'woocommerce-gateway-ecommerceconnect'),
                 'type' => 'textarea',
+                'default' => $this->get_masked_secret_preview($this->id . '_work_crt'),
                 'description' => $this->get_private_key_status_description(
                     $this->id . '_work_crt',
                     __('This is the Work certificate for signature verification from UPC e-Commerce Connect payment gateway', 'woocommerce-gateway-ecommerceconnect'),
@@ -263,6 +266,7 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
             'test_crt' => array(
                 'title' => __('Test certificate', 'woocommerce-gateway-ecommerceconnect'),
                 'type' => 'textarea',
+                'default' => $this->get_masked_secret_preview($this->id . '_test_crt'),
                 'description' => $this->get_private_key_status_description(
                     $this->id . '_test_crt',
                     __('This is the Test certificate for signature verification from UPC e-Commerce Connect payment gateway', 'woocommerce-gateway-ecommerceconnect'),
@@ -321,6 +325,13 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
             if (isset($_POST[$key])) {
                 $posted_key = isset($_POST[$key]) ? trim(wp_unslash($_POST[$key])) : '';
                 $current_saved_key = get_option($value, '');
+
+                if ($this->is_masked_secret_preview($value, $posted_key)) {
+                    unset($_POST[$key]);
+
+                    continue;
+                }
+
                 if (!empty($posted_key)) {
                     update_option($value, $posted_key);
 
@@ -346,6 +357,26 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
         }
 
         return parent::process_admin_options();
+    }
+
+    protected function get_masked_secret_preview($field_key)
+    {
+        $current_value = (string) get_option($field_key, '');
+
+        if ('' === trim($current_value)) {
+            return '';
+        }
+
+        $fingerprint = strtoupper(substr(hash('sha256', $current_value), 0, 12));
+
+        return "[SAVED SECRET]\nFingerprint: {$fingerprint}\nPaste a new value to replace and save changes.";
+    }
+
+    protected function is_masked_secret_preview($field_key, $value)
+    {
+        $preview = $this->get_masked_secret_preview($field_key);
+
+        return '' !== $preview && $preview === $value;
     }
 
     public function get_private_key_status_description($field_key, $description, $title)
