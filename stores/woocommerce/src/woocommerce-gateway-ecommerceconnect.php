@@ -6,7 +6,7 @@
  * Description: UPC WooCommerce plugin enables you to easily accept payments through your Woocommerce store
  * Author: upc.ua
  * Author URI: https://upc.ua
- * Version: 8.4.1
+ * Version: 8.4
  * Text Domain: woocommerce-gateway-ecommerceconnect
  * Domain Path: /languages
  * Requires at least: 6.3
@@ -18,7 +18,44 @@
  */
 defined('ABSPATH') || exit;
 
-define('WC_GATEWAY_ECOMMERCECONNECT_VERSION', '8.4.1');
+function woocommerce_ecommerceconnect_get_runtime_version()
+{
+    static $resolved_version = null;
+
+    if (null !== $resolved_version) {
+        return $resolved_version;
+    }
+
+    $fallback_version = '8.4.0';
+    $package_json_path = dirname(__DIR__) . '/package.json';
+
+    if (!is_readable($package_json_path)) {
+        $resolved_version = $fallback_version;
+
+        return $resolved_version;
+    }
+
+    $package_json = file_get_contents($package_json_path);
+    if (false === $package_json) {
+        $resolved_version = $fallback_version;
+
+        return $resolved_version;
+    }
+
+    $package_data = json_decode($package_json, true);
+    if (JSON_ERROR_NONE !== json_last_error() || !is_array($package_data)) {
+        $resolved_version = $fallback_version;
+
+        return $resolved_version;
+    }
+
+    $package_version = isset($package_data['version']) ? trim((string) $package_data['version']) : '';
+    $resolved_version = '' !== $package_version ? $package_version : $fallback_version;
+
+    return $resolved_version;
+}
+
+define('WC_GATEWAY_ECOMMERCECONNECT_VERSION', woocommerce_ecommerceconnect_get_runtime_version());
 define('WC_GATEWAY_ECOMMERCECONNECT_URL', untrailingslashit(plugins_url(basename(plugin_dir_path(__FILE__)), basename(__FILE__))));
 define('WC_GATEWAY_ECOMMERCECONNECT_PATH', untrailingslashit(plugin_dir_path(__FILE__)));
 
