@@ -298,12 +298,10 @@ msgstr "Вратите се на плаћања"
 #, php-format
 msgid ""
 "Please, enter this link into the notify url field in the merchant portal for "
-"return customer back to your store after payment <span "
-"style=\"color: red\"><pre><code>%2$s</code></pre></span>"
+"return customer back to your store after payment"
 msgstr ""
 "Молимо, унесите овај линк у поље Notify URL у merchant порталу како би се "
-"купац после плаћања вратио у вашу продавницу <span style=\"color: red\"><pre>"
-"<code>%2$s</code></pre></span>"
+"купац после плаћања вратио у вашу продавницу"
 
 #: includes/class-wc-gateway-ecommerceconnect.php:485
 msgid "Gateway Disabled"

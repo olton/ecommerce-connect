@@ -34,6 +34,8 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
 
     protected $custom_success_status;
 
+    protected $enable_alt_currency;
+
     protected $eurRate;
 
     protected $usdRare;
@@ -82,6 +84,7 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
         $this->skip_form = 'yes' === $this->get_option('skip_form') ? 'yes' : 'no';
         $this->is_pre_autorization = 'yes' === $this->get_option('is_pre_autorization') ? 'yes' : 'no';
         $this->custom_success_status = str_replace('wc-', '', $this->get_option('custom_success_status'));
+        $this->enable_alt_currency = 'yes' === $this->get_option('enable_alt_currency', 'yes') ? 'yes' : 'no';
 
         if ('yes' === $this->get_option('testmode')) {
             $this->add_testmode_admin_settings_notice();
@@ -146,21 +149,21 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
                 'type' => 'checkbox',
                 'description' => __('This controls whether or not this gateway is enabled within WooCommerce.', 'woocommerce-gateway-ecommerceconnect'),
                 'default' => 'no',
-                'desc_tip' => true,
+                'desc_tip' => false,
             ),
             'title' => array(
                 'title' => __('Title', 'woocommerce-gateway-ecommerceconnect'),
                 'type' => 'text',
                 'description' => __('This controls the title which the user sees during checkout.', 'woocommerce-gateway-ecommerceconnect'),
                 'default' => __('eCommerceConnect', 'woocommerce-gateway-ecommerceconnect'),
-                'desc_tip' => true,
+                'desc_tip' => false,
             ),
             'description' => array(
                 'title' => __('Description', 'woocommerce-gateway-ecommerceconnect'),
                 'type' => 'text',
                 'description' => __('This controls the description which the user sees during checkout', 'woocommerce-gateway-ecommerceconnect'),
                 'default' => __('Pay with eCommerceConnect (Debit/Credit Cards)', 'woocommerce-gateway-ecommerceconnect'),
-                'desc_tip' => true,
+                'desc_tip' => false,
             ),
             'url' => array(
                 'title' => __('Payment Gateway Action URL', 'woocommerce-gateway-ecommerceconnect'),
@@ -196,6 +199,13 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
                 'default' => 'UAH',
                 'options' => $currency_options,
             ),
+            'enable_alt_currency' => array(
+                'title' => __('Enable alternative display currency', 'woocommerce-gateway-ecommerceconnect'),
+                'label' => __('Show alternative currency selector', 'woocommerce-gateway-ecommerceconnect'),
+                'type' => 'checkbox',
+                'description' => __('Enable to display and use the alternative display currency selector (USD/EUR).', 'woocommerce-gateway-ecommerceconnect'),
+                'default' => 'yes',
+            ),
             'alt_currency' => [
                 'title' => __('Alternative display currency (AltCurrency)', 'woocommerce-gateway-ecommerceconnect'),
                 'type' => 'select',
@@ -207,7 +217,7 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
                 'title' => __('EUR Conversion Rate', 'woocommerce-gateway-ecommerceconnect'),
                 'type' => 'number',
                 'description' => __('Specify the conversion rate for EUR. Use dot (.) as decimal separator.', 'woocommerce-gateway-ecommerceconnect'),
-                'desc_tip' => true,
+                'desc_tip' => false,
                 'custom_attributes' => array(
                     'step' => '0.0001',
                     'min' => '0',
@@ -217,7 +227,7 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
                 'title' => __('USD Conversion Rate', 'woocommerce-gateway-ecommerceconnect'),
                 'type' => 'number',
                 'description' => __('Specify the conversion rate for USD. Use dot (.) as decimal separator.', 'woocommerce-gateway-ecommerceconnect'),
-                'desc_tip' => true,
+                'desc_tip' => false,
                 'custom_attributes' => array(
                     'step' => '0.0001',
                     'min' => '0',
@@ -265,7 +275,7 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
                 'description' => __('Set the current status of your WooCommerce order for the corresponding transaction', 'woocommerce-gateway-ecommerceconnect'),
                 'options' => wc_get_order_statuses(),
                 'default' => 'wc-processing',
-                'desc_tip' => true,
+                'desc_tip' => false,
             ],
             'lang' => array(
                 'title' => __('eCommerceConnect interface language', 'woocommerce-gateway-ecommerceconnect'),
@@ -592,19 +602,26 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
                         ?>
                     </h2>
 
-          <div class="ecommconnect-settings-info" role="status" aria-live="polite">
-              <?php
-                echo wp_kses_post(
-                    sprintf(
-                        // translators: %1$s is the return URL, %2$s is the transaction ID or order code shown in HTML.
-                        __('Please, enter this link into the notify url field in the merchant portal for return customer back to your store after payment <span style="color: red"><pre><code>%2$s</code></pre></span>',
-                            'woocommerce-gateway-ecommerceconnect'),
-                        'https://ecconnect.upc.ua',
-                        WC()->api_request_url(strtolower(get_class($this)))
-                    )
-                );
-                ?>
-          </div>
+                    <div class="ecommconnect-settings-info" role="status" aria-live="polite">
+                            <?php
+                                $notify_url = WC()->api_request_url(strtolower(get_class($this)));
+                                ?>
+                            <p><?php esc_html_e('Please, enter this link into the notify url field in the merchant portal for return customer back to your store after payment', 'woocommerce-gateway-ecommerceconnect'); ?></p>
+                            <div class="ecommconnect-settings-info__copy-row">
+                                <pre><code id="ecommconnect-notify-url"><?php echo esc_html($notify_url); ?></code></pre>
+                                <button
+                                    type="button"
+                                    class="button ecommconnect-copy-notify-url"
+                                    data-copy-target="ecommconnect-notify-url"
+                                    data-copy-text="<?php echo esc_attr__('Copy link', 'woocommerce-gateway-ecommerceconnect'); ?>"
+                                    data-copied-text="<?php echo esc_attr__('Copied', 'woocommerce-gateway-ecommerceconnect'); ?>"
+                                    data-copy-error-text="<?php echo esc_attr__('Unable to copy. Please copy manually.', 'woocommerce-gateway-ecommerceconnect'); ?>"
+                                >
+                                        <?php esc_html_e('Copy link', 'woocommerce-gateway-ecommerceconnect'); ?>
+                                </button>
+                            </div>
+                            <p class="description ecommconnect-copy-feedback" role="status" aria-live="polite"></p>
+                    </div>
             <?php
             echo '<div class="ecommconnect-settings-page">';
             echo '<div class="ecommconnect-settings-card">';
@@ -644,6 +661,7 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
         $available = $this->available_currencies;
 
         $alt_currency = (int) $this->get_option('alt_currency', 840);
+        $is_alt_currency_enabled = 'yes' === $this->enable_alt_currency;
 
         $order_total = $order->get_total();
         $total_amount = round($order_total * 100);
@@ -651,7 +669,10 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
 
         $rate = 1.0;
 
-        if ($available[$order_currency] === $contract_currency) {
+        if (!$is_alt_currency_enabled) {
+            $alt_currency = (int) $contract_currency;
+            $alt_total = $total_amount;
+        } else if ($available[$order_currency] === $contract_currency) {
             $alt_currency = $contract_currency;
         } else if ($alt_currency === 978) {
             $rate = (float) $this->eurRate;

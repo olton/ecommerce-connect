@@ -165,12 +165,21 @@ add_action('admin_enqueue_scripts', function ($hook) {
 
     if ($is_gateway_settings) {
         $admin_settings_css = plugin_dir_path(__FILE__) . 'assets/css/admin-settings.css';
+        $admin_settings_js = plugin_dir_path(__FILE__) . 'assets/js/admin-settings.js';
 
         wp_enqueue_style(
             'ecommconnect-admin-settings',
             plugin_dir_url(__FILE__) . 'assets/css/admin-settings.css',
             [],
             file_exists($admin_settings_css) ? (string) filemtime($admin_settings_css) : WC_GATEWAY_ECOMMERCECONNECT_VERSION
+        );
+
+        wp_enqueue_script(
+            'ecommconnect-admin-settings',
+            plugin_dir_url(__FILE__) . 'assets/js/admin-settings.js',
+            [],
+            file_exists($admin_settings_js) ? (string) filemtime($admin_settings_js) : WC_GATEWAY_ECOMMERCECONNECT_VERSION,
+            true
         );
     }
 });

@@ -207,9 +207,8 @@ msgstr "Vrati se na plaćanja"
 #. code shown in HTML.
 msgid ""
 "Please, enter this link into the notify url field in the merchant portal for "
-"return customer back to your store after payment <span "
-"style=\"color: red\"><pre><code>%2$s</code></pre></span>"
-msgstr "Molimo unesite ovaj link u polje Notify URL u merchant portalu kako bi se kupac nakon plaćanja vratio u vašu prodavnicu <span style=\"color: red\"><pre><code>%2$s</code></pre></span>"
+"return customer back to your store after payment"
+msgstr "Molimo unesite ovaj link u polje Notify URL u merchant portalu kako bi se kupac nakon plaćanja vratio u vašu prodavnicu"
 
 msgid "Gateway Disabled"
 msgstr "Gateway onemogućen"

@@ -207,9 +207,8 @@ msgstr "Zurück zu Zahlungen"
 #. code shown in HTML.
 msgid ""
 "Please, enter this link into the notify url field in the merchant portal for "
-"return customer back to your store after payment <span "
-"style=\"color: red\"><pre><code>%2$s</code></pre></span>"
-msgstr "Bitte fügen Sie diesen Link in das Feld Notify URL im Händlerportal ein, damit der Kunde nach der Zahlung in Ihren Shop zurückkehrt <span style=\"color: red\"><pre><code>%2$s</code></pre></span>"
+"return customer back to your store after payment"
+msgstr "Bitte fügen Sie diesen Link in das Feld Notify URL im Händlerportal ein, damit der Kunde nach der Zahlung in Ihren Shop zurückkehrt"
 
 msgid "Gateway Disabled"
 msgstr "Gateway deaktiviert"

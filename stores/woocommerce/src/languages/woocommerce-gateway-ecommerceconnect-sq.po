@@ -207,9 +207,8 @@ msgstr "Kthehu te pagesat"
 #. code shown in HTML.
 msgid ""
 "Please, enter this link into the notify url field in the merchant portal for "
-"return customer back to your store after payment <span "
-"style=\"color: red\"><pre><code>%2$s</code></pre></span>"
-msgstr "Ju lutemi, vendoseni këtë link në fushën Notify URL në portalin e merchant-it që klienti të kthehet në dyqanin tuaj pas pagesës <span style=\"color: red\"><pre><code>%2$s</code></pre></span>"
+"return customer back to your store after payment"
+msgstr "Ju lutemi, vendoseni këtë link në fushën Notify URL në portalin e merchant-it që klienti të kthehet në dyqanin tuaj pas pagesës"
 
 msgid "Gateway Disabled"
 msgstr "Gateway i çaktivizuar"
