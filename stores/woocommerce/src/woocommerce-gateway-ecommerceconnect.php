@@ -137,14 +137,16 @@ function woocommerce_ecommerceconnect_missing_wc_notice()
 add_action('admin_notices', 'woocommerce_ecommerceconnect_missing_wc_notice');
 
 add_action('admin_enqueue_scripts', function ($hook) {
-    $is_order_edit = isset($_GET['page'], $_GET['action']) &&
-        $_GET['page'] === 'wc-orders' &&
-        $_GET['action'] === 'edit';
+    $page = isset($_GET['page']) ? sanitize_text_field(wp_unslash($_GET['page'])) : '';
+    $section = isset($_GET['section']) ? sanitize_text_field(wp_unslash($_GET['section'])) : '';
+    $action = isset($_GET['action']) ? sanitize_text_field(wp_unslash($_GET['action'])) : '';
 
-    $is_gateway_settings = isset($_GET['page'], $_GET['tab'], $_GET['section']) &&
-        $_GET['page'] === 'wc-settings' &&
-        $_GET['tab'] === 'checkout' &&
-        in_array($_GET['section'], ['ecommerceconnect', 'wc_gateway_ecommerceconnect'], true);
+    $is_order_edit = isset($_GET['page'], $_GET['action']) &&
+        $page === 'wc-orders' &&
+        $action === 'edit';
+
+    $is_gateway_section = in_array($section, ['ecommerceconnect', 'wc_gateway_ecommerceconnect'], true);
+    $is_gateway_settings = $page === 'wc-settings' && $is_gateway_section;
 
     if ($is_order_edit) {
         wp_enqueue_script(
@@ -162,11 +164,13 @@ add_action('admin_enqueue_scripts', function ($hook) {
     }
 
     if ($is_gateway_settings) {
+        $admin_settings_css = plugin_dir_path(__FILE__) . 'assets/css/admin-settings.css';
+
         wp_enqueue_style(
             'ecommconnect-admin-settings',
             plugin_dir_url(__FILE__) . 'assets/css/admin-settings.css',
             [],
-            WC_GATEWAY_ECOMMERCECONNECT_VERSION
+            file_exists($admin_settings_css) ? (string) filemtime($admin_settings_css) : WC_GATEWAY_ECOMMERCECONNECT_VERSION
         );
     }
 });
