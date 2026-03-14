@@ -220,12 +220,12 @@ msgstr "Върни се към плащанията"
 #. translators: %1$s is the return URL, %2$s is the transaction ID or order
 #. code shown in HTML.
 msgid ""
-"Send this link to a <a href=\"%1$s\" target=\"_blank\" rel=\"noopener "
-"noreferrer\">UPC specialist</a> to return to the store after payment <span "
+"Please, enter this link into the notify url field in the merchant portal for "
+"return customer back to your store after payment <span "
 "style=\"color: red\"><pre><code>%2$s</code></pre></span>"
 msgstr ""
-"Изпратете този линк на <a href=\"%1$s\" target=\"_blank\" rel=\"noopener "
-"noreferrer\">UPC специалист</a>, за да се върнете в магазина след плащане "
+"Моля, въведете този линк в полето Notify URL в merchant портала, за да върнете "
+"клиента обратно във вашия магазин след плащане "
 "<span style=\"color: red\"><pre><code>%2$s</code></pre></span>"
 
 msgid "Gateway Disabled"

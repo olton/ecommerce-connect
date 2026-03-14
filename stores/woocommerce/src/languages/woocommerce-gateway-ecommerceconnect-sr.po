@@ -297,13 +297,13 @@ msgstr "Вратите се на плаћања"
 #: includes/class-wc-gateway-ecommerceconnect.php:470
 #, php-format
 msgid ""
-"Send this link to a <a href=\"%1$s\" target=\"_blank\" rel=\"noopener "
-"noreferrer\">UPC specialist</a> to return to the store after payment <span "
+"Please, enter this link into the notify url field in the merchant portal for "
+"return customer back to your store after payment <span "
 "style=\"color: red\"><pre><code>%2$s</code></pre></span>"
 msgstr ""
-"Пошаљите овај линк <a href=\"%1$s\" target=\"_blank\" rel=\"noopener "
-"noreferrer\">UPC стручњаку</a> да бисте га вратили у продавницу након "
-"плаћања <span style=\"color: red\"><pre><code>%2$s</code></pre></span>"
+"Молимо, унесите овај линк у поље Notify URL у merchant порталу како би се "
+"купац после плаћања вратио у вашу продавницу <span style=\"color: red\"><pre>"
+"<code>%2$s</code></pre></span>"
 
 #: includes/class-wc-gateway-ecommerceconnect.php:485
 msgid "Gateway Disabled"

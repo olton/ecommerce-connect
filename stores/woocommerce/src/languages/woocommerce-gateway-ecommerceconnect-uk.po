@@ -228,12 +228,12 @@ msgstr "Повернутися до платежів"
 #. translators: %1$s is the return URL, %2$s is the transaction ID or order
 #. code shown in HTML.
 msgid ""
-"Send this link to a <a href=\"%1$s\" target=\"_blank\" rel=\"noopener "
-"noreferrer\">UPC specialist</a> to return to the store after payment <span "
+"Please, enter this link into the notify url field in the merchant portal for "
+"return customer back to your store after payment <span "
 "style=\"color: red\"><pre><code>%2$s</code></pre></span>"
 msgstr ""
-"Надішліть це посилання <a href=\"%1$s\" target=\"_blank\" rel=\"noopener "
-"noreferrer\">UPC specialist</a>, щоб повернутися до магазину після оплати "
+"Будь ласка, вставте це посилання в поле Notify URL у кабінеті merchant, щоб "
+"повернути покупця до вашого магазину після оплати "
 "<span style=\"color: red\"><pre><code>%2$s</code></pre></span>"
 
 msgid "Gateway Disabled"

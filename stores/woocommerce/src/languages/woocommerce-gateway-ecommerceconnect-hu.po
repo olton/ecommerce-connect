@@ -206,10 +206,10 @@ msgstr "Vissza a fizetésekhez"
 #. translators: %1$s is the return URL, %2$s is the transaction ID or order
 #. code shown in HTML.
 msgid ""
-"Send this link to a <a href=\"%1$s\" target=\"_blank\" rel=\"noopener "
-"noreferrer\">UPC specialist</a> to return to the store after payment <span "
+"Please, enter this link into the notify url field in the merchant portal for "
+"return customer back to your store after payment <span "
 "style=\"color: red\"><pre><code>%2$s</code></pre></span>"
-msgstr "Küldje el ezt a linket egy <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">UPC szakembernek</a>, hogy a fizetés után visszatérjen az üzletbe <span style=\"color: red\"><pre><code>%2$s</code></pre></span>"
+msgstr "Kérjük, illessze be ezt a linket a merchant portál Notify URL mezőjébe, hogy a vásárló fizetés után visszatérjen az üzletébe <span style=\"color: red\"><pre><code>%2$s</code></pre></span>"
 
 msgid "Gateway Disabled"
 msgstr "Átjáró letiltva"

@@ -595,7 +595,7 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
           <h4>
             <strong><?php printf(
                 // translators: %1$s is the return URL, %2$s is the transaction ID or order code shown in HTML.
-                __('Send this link to a <a href="%1$s" target="_blank" rel="noopener noreferrer">UPC specialist</a> to return to the store after payment <span style="color: red"><pre><code>%2$s</code></pre></span>',
+                __('Please, enter this link into the notify url field in the merchant portal for return customer back to your store after payment <span style="color: red"><pre><code>%2$s</code></pre></span>',
                     'woocommerce-gateway-ecommerceconnect'),
                 'https://ecconnect.upc.ua',
                 WC()->api_request_url(strtolower(get_class($this)))
