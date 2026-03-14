@@ -5,10 +5,10 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/woocommerce-"
 "ecommerceconnect-gateway\n"
 "POT-Creation-Date: 2025-07-22T09:13:46+00:00\n"
-"PO-Revision-Date: 2025-07-22 15:47+0300\n"
+"PO-Revision-Date: 2026-03-14 12:30+0200\n"
 "Last-Translator: Serhii Pimenov\n"
 "Language-Team: UPC ECommerce\n"
-"Language: en\n"
+"Language: sq\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -27,9 +27,7 @@ msgstr "https://ecconnect.upc.ua"
 msgid ""
 "UPC WooCommerce plugin enables you to easily accept payments through your "
 "Woocommerce store"
-msgstr ""
-"UPC WooCommerce plugin enables you to easily accept payments through your "
-"Woocommerce store"
+msgstr "Shtesa UPC WooCommerce ju mundëson të pranoni lehtë pagesa në dyqanin tuaj WooCommerce"
 
 #. Author of the plugin
 msgid "upc.ua"
@@ -43,181 +41,167 @@ msgid "eCommerceConnect"
 msgstr "eCommerceConnect"
 
 msgid "WooCommerce eCommerceConnect Order Data"
-msgstr "WooCommerce eCommerceConnect Order Data"
+msgstr "Të dhënat e porosisë WooCommerce eCommerceConnect"
 
 msgid "WooCommerce eCommerceConnect Data"
-msgstr "WooCommerce eCommerceConnect Data"
+msgstr "Të dhënat WooCommerce eCommerceConnect"
 
 #. translators: %1$s and %2$s are opening and closing anchor tags.
 msgid ""
 "By using this extension, you may be storing personal data or sharing data "
 "with an external service. %1$sLearn more about how this works, including what "
 "you may want to include in your privacy policy.%2$s"
-msgstr ""
-"By using this extension, you may be storing personal data or sharing data "
-"with an external service. %1$sLearn more about how this works, including what "
-"you may want to include in your privacy policy.%2$s"
+msgstr "Duke përdorur këtë shtesë, mund të ruani të dhëna personale ose të ndani të dhëna me një shërbim të jashtëm. %1$sMësoni më shumë se si funksionon kjo, duke përfshirë çfarë mund të dëshironi të përfshini në politikën tuaj të privatësisë.%2$s"
 
 msgid "Orders"
-msgstr "Orders"
+msgstr "Porositë"
 
 msgid "eCommerceConnect token"
 msgstr "eCommerceConnect token"
 
 msgid "eCommerceConnect Order Data Erased."
-msgstr "eCommerceConnect Order Data Erased."
+msgstr "Të dhënat e porosisë eCommerceConnect u fshinë."
 
 #. translators: %1$s and %2$s are opening and closing <strong> tags.
 msgid ""
 "Accept card payments on your website via %1$seCommerceConnect%2$s payment "
 "gateway"
-msgstr ""
-"Accept card payments on your website via %1$seCommerceConnect%2$s payment "
-"gateway"
+msgstr "Pranoni pagesa me kartë në faqen tuaj përmes %1$seCommerceConnect%2$s payment gateway"
 
 msgid "Enable/Disable"
-msgstr "Enable/Disable"
+msgstr "Aktivizo/Çaktivizo"
 
 msgid "Enable eCommerceConnect"
-msgstr "Enable eCommerceConnect"
+msgstr "Aktivizo eCommerceConnect"
 
 msgid "This controls whether or not this gateway is enabled within WooCommerce."
-msgstr ""
-"This controls whether or not this gateway is enabled within WooCommerce."
+msgstr "Kjo përcakton nëse ky gateway është aktivizuar në WooCommerce."
 
 msgid "Title"
-msgstr "Title"
+msgstr "Titulli"
 
 msgid "This controls the title which the user sees during checkout."
-msgstr "This controls the title which the user sees during checkout."
+msgstr "Kjo përcakton titullin që përdoruesi sheh gjatë pagesës."
 
 msgid "Description"
-msgstr "Description"
+msgstr "Përshkrimi"
 
 msgid "This controls the description which the user sees during checkout"
-msgstr "This controls the description which the user sees during checkout"
+msgstr "Kjo përcakton përshkrimin që përdoruesi sheh gjatë pagesës"
 
 msgid "Payment Gateway Action URL"
-msgstr "Payment Gateway Action URL"
+msgstr "URL e veprimit të payment gateway"
 
 msgid "e.g. https://ecg.test.upc.ua or https://secure.upc.ua"
-msgstr "e.g. https://ecg.test.upc.ua or https://secure.upc.ua"
+msgstr "p.sh. https://ecg.test.upc.ua ose https://secure.upc.ua"
 
 msgid "eCommerceConnect Sandbox"
-msgstr "eCommerceConnect Sandbox"
+msgstr "Mjedisi testues eCommerceConnect"
 
 msgid "Place the payment gateway in test mode"
-msgstr "Place the payment gateway in test mode"
+msgstr "Vendosni payment gateway në mënyrën test"
 
 msgid "Merchant ID"
-msgstr "Merchant ID"
+msgstr "ID e tregtarit"
 
 msgid "This is the Merchant ID, received from eCommerceConnect"
-msgstr "This is the Merchant ID, received from eCommerceConnect"
+msgstr "Ky është ID e tregtarit, i marrë nga eCommerceConnect"
 
 msgid "Terminal ID"
-msgstr "Terminal ID"
+msgstr "ID e terminalit"
 
 msgid "This is the Terminal ID, received from eCommerceConnect"
-msgstr "This is the Terminal ID, received from eCommerceConnect"
+msgstr "Ky është ID e terminalit, i marrë nga eCommerceConnect"
 
 msgid "Private key"
-msgstr "Private key"
+msgstr "Çelës privat"
 
 msgid "This is the Private key, received from eCommerceConnect"
-msgstr "This is the Private key, received from eCommerceConnect"
+msgstr "Ky është çelësi privat, i marrë nga eCommerceConnect"
 
 msgid "Private key for test mode"
-msgstr "Private key for test mode"
+msgstr "Çelës privat për mënyrën test"
 
 msgid "This is the Private key for test mode, received from eCommerceConnect"
-msgstr "This is the Private key for test mode, received from eCommerceConnect"
+msgstr "Ky është çelësi privat për mënyrën test, i marrë nga eCommerceConnect"
 
 msgid "Work certificate"
-msgstr "Work certificate"
+msgstr "Certifikatë prodhimi"
 
 msgid ""
 "This is the Work certificate for signature verification from UPC e-Commerce "
 "Connect payment gateway"
-msgstr ""
-"This is the Work certificate for signature verification from UPC e-Commerce "
-"Connect payment gateway"
+msgstr "Kjo është certifikata e prodhimit për verifikimin e nënshkrimit nga UPC e-Commerce Connect payment gateway"
 
 msgid "Test certificate"
-msgstr "Test certificate"
+msgstr "Certifikatë test"
 
 msgid ""
 "This is the Test certificate for signature verification from UPC e-Commerce "
 "Connect payment gateway"
-msgstr ""
-"This is the Test certificate for signature verification from UPC e-Commerce "
-"Connect payment gateway"
+msgstr "Kjo është certifikata e testit për verifikimin e nënshkrimit nga UPC e-Commerce Connect payment gateway"
 
 msgid "Status for Successful Withdrawal"
-msgstr "Status for Successful Withdrawal"
+msgstr "Statusi për tërheqje të suksesshme"
 
 msgid ""
 "Set the current status of your WooCommerce order for the corresponding "
 "transaction"
-msgstr ""
-"Set the current status of your WooCommerce order for the corresponding "
-"transaction"
+msgstr "Vendosni statusin aktual të porosisë suaj WooCommerce për transaksionin përkatës"
 
 msgid "eCommerceConnect interface language"
-msgstr "eCommerceConnect interface language"
+msgstr "Gjuha e ndërfaqes eCommerceConnect"
 
 msgid "Set the payment gateway language"
-msgstr "Set the payment gateway language"
+msgstr "Vendosni gjuhën e payment gateway"
 
 msgid "Skip receipt page"
-msgstr "Skip receipt page"
+msgstr "Kalo faqen e kuponit"
 
 msgid "Pre-authorization"
-msgstr "Pre-authorization"
+msgstr "Paraautorizim"
 
 msgid "For pre-authorization, check the checkbox"
-msgstr "For pre-authorization, check the checkbox"
+msgstr "Për paraautorizim, shënoni kutinë"
 
 #. translators: %s is the setting name.
 msgid "%s updated successfully."
-msgstr "%s updated successfully."
+msgstr "%s u përditësua me sukses."
 
 #. translators: 1: Field name, 2: Field name again.
 msgid "%1$s cannot be empty. Please enter a %2$s."
-msgstr "%1$s cannot be empty. Please enter a %2$s."
+msgstr "%1$s nuk mund të jetë bosh. Ju lutem vendosni një %2$s."
 
 #. translators: %s is the field name.
 msgid "A %s is currently saved."
-msgstr "A %s is currently saved."
+msgstr "Një %s është ruajtur aktualisht."
 
 #. translators: 1: Field label, 2: Field label again.
 msgid "No %1$s is currently saved. Please enter a %2$s."
-msgstr "No %1$s is currently saved. Please enter a %2$s."
+msgstr "Asnjë %1$s nuk është ruajtur aktualisht. Ju lutem vendosni një %2$s."
 
 msgid "Sandbox Merchant ID currently in use"
-msgstr "Sandbox Merchant ID currently in use"
+msgstr "Sandbox Merchant ID në përdorim aktualisht"
 
 msgid "Sandbox Terminal ID currently in use"
-msgstr "Sandbox Terminal ID currently in use"
+msgstr "Sandbox Terminal ID në përdorim aktualisht"
 
 msgid "Your store uses a currency that ecommerceconnect doesn't support yet."
-msgstr "Your store uses a currency that ecommerceconnect doesn't support yet."
+msgstr "Dyqani juaj përdor një monedhë që ecommerceconnect ende nuk e mbështet."
 
 msgid "You forgot to fill your merchant ID."
-msgstr "You forgot to fill your merchant ID."
+msgstr "Keni harruar të plotësoni merchant ID."
 
 msgid "You forgot to fill your terminal ID."
-msgstr "You forgot to fill your terminal ID."
+msgstr "Keni harruar të plotësoni terminal ID."
 
 msgid ""
 "To use eCommerceConnect as a payment provider, you need to fix the problems "
 "below:"
-msgstr ""
-"To use eCommerceConnect as a payment provider, you need to fix the problems "
-"below:"
+msgstr "Për të përdorur eCommerceConnect si ofrues pagese, duhet të rregulloni problemet më poshtë:"
 
 msgid "Return to payments"
-msgstr "Return to payments"
+msgstr "Kthehu te pagesat"
 
 #. translators: %1$s is the return URL, %2$s is the transaction ID or order
 #. code shown in HTML.
@@ -225,78 +209,69 @@ msgid ""
 "Send this link to a <a href=\"%1$s\" target=\"_blank\" rel=\"noopener "
 "noreferrer\">UPC specialist</a> to return to the store after payment <span "
 "style=\"color: red\"><pre><code>%2$s</code></pre></span>"
-msgstr ""
-"Send this link to a <a href=\"%1$s\" target=\"_blank\" rel=\"noopener "
-"noreferrer\">UPC specialist</a> to return to the store after payment <span "
-"style=\"color: red\"><pre><code>%2$s</code></pre></span>"
+msgstr "Dërgojeni këtë link një <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">specialisti UPC</a> për t'u kthyer në dyqan pas pagesës <span style=\"color: red\"><pre><code>%2$s</code></pre></span>"
 
 msgid "Gateway Disabled"
-msgstr "Gateway Disabled"
+msgstr "Gateway i çaktivizuar"
 
 #. translators: %1$s and %2$s are opening and closing anchor or <strong> tags.
 msgid ""
 "Choose UAH as your store currency in %1$sGeneral Settings%2$s to enable the "
 "eCommerceCcnnect Gateway."
-msgstr ""
-"Choose UAH as your store currency in %1$s General Settings %2$s to enable the "
-"eCommerceCcnnect Gateway."
+msgstr "Zgjidhni UAH si monedhën e dyqanit te %1$sGeneral Settings%2$s për të aktivizuar eCommerceCcnnect Gateway."
 
 msgid "Purchase"
-msgstr "Purchase"
+msgstr "Paguaj"
 
 msgid "Back"
-msgstr "Back"
+msgstr "Mbrapa"
 
 msgid ""
 "Thank you for your order, please click the button below to pay with "
 "eCommerceConnect."
-msgstr ""
-"Thank you for your order, please click the button below to pay with "
-"eCommerceConnect."
+msgstr "Faleminderit për porosinë tuaj, ju lutem klikoni butonin më poshtë për të paguar me eCommerceConnect."
 
 msgid "Capture via UPC"
-msgstr "Capture via UPC"
+msgstr "Kapje përmes UPC"
 
 msgid "Оплатити"
-msgstr "Оплатити"
+msgstr "Paguaj"
 
 msgid "Запит не відбувся: "
-msgstr "Запит не відбувся: "
+msgstr "Kërkesa dështoi: "
 
 msgid "Captured via UPC Gateway"
-msgstr "Captured via UPC Gateway"
+msgstr "U kap përmes UPC Gateway"
 
 msgid "Capture success. Order moved to Processing"
-msgstr "Capture success. Order moved to Processing"
+msgstr "Kapja me sukses. Porosia u zhvendos në Përpunim"
 
 msgid "Invalid response from UPC"
-msgstr "Invalid response from UPC"
+msgstr "Përgjigje e pavlefshme nga UPC"
 
 msgid "Settings"
-msgstr "Settings"
+msgstr "Cilësimet"
 
 msgid "Support"
-msgstr "Support"
+msgstr "Mbështetje"
 
 #. translators: %s is the anchor tag link to WooCommerce download page.
 msgid ""
 "WooCommerce eCommerceConnect Gateway requires WooCommerce to be installed and "
 "active. You can download %s here."
-msgstr ""
-"WooCommerce eCommerceConnect Gateway requires WooCommerce to be installed and "
-"active. You can download %s here."
+msgstr "WooCommerce eCommerceConnect Gateway kërkon që WooCommerce të jetë i instaluar dhe aktiv. Mund ta shkarkoni %s këtu."
 
 msgid "eCommerceConnect payment method"
-msgstr "eCommerceConnect payment method"
+msgstr "Mënyra e pagesës eCommerceConnect"
 
 msgid "Transaction Currency"
-msgstr "Transaction Currency"
+msgstr "Monedha e transaksionit"
 
 msgid "Select the currency to be used for this payment method (WooCommerce current: <strong>%s</strong>)"
-msgstr "Select the currency to be used for this payment method (WooCommerce current: <strong>%s</strong>)"
+msgstr "Zgjidhni monedhën që do të përdoret për këtë mënyrë pagese (monedha aktuale e WooCommerce: <strong>%s</strong>)"
 
 msgid "Alternative display currency (AltCurrency)"
-msgstr "Alternative display currency (AltCurrency)"
+msgstr "Monedhë alternative e shfaqjes (AltCurrency)"
 
 msgid "Used for displaying price in another currency (must be USD or EUR). Used only for visual purposes."
-msgstr "Used for displaying price in another currency (must be USD or EUR). Used only for visual purposes."
+msgstr "Përdoret për të shfaqur çmimin në një monedhë tjetër (duhet të jetë USD ose EUR). Përdoret vetëm për qëllime vizuale."

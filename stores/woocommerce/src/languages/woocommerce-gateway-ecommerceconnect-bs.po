@@ -1,14 +1,14 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: eCommerceConnect Gateway 8.4.1\n"
+"Project-Id-Version: eCommerceConnect Gateway 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/woocommerce-"
 "ecommerceconnect-gateway\n"
 "POT-Creation-Date: 2025-07-22T09:13:46+00:00\n"
-"PO-Revision-Date: 2025-07-22 12:46+0300\n"
+"PO-Revision-Date: 2026-03-14 12:30+0200\n"
 "Last-Translator: Serhii Pimenov\n"
 "Language-Team: UPC ECommerce\n"
-"Language: en_US\n"
+"Language: bs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -27,9 +27,7 @@ msgstr "https://ecconnect.upc.ua"
 msgid ""
 "UPC WooCommerce plugin enables you to easily accept payments through your "
 "Woocommerce store"
-msgstr ""
-"UPC WooCommerce plugin enables you to easily accept payments through your "
-"Woocommerce store"
+msgstr "UPC WooCommerce dodatak vam omogućava da jednostavno primate plaćanja kroz svoju WooCommerce prodavnicu"
 
 #. Author of the plugin
 msgid "upc.ua"
@@ -43,182 +41,167 @@ msgid "eCommerceConnect"
 msgstr "eCommerceConnect"
 
 msgid "WooCommerce eCommerceConnect Order Data"
-msgstr "WooCommerce eCommerceConnect Order Data"
+msgstr "WooCommerce eCommerceConnect podaci o narudžbi"
 
 msgid "WooCommerce eCommerceConnect Data"
-msgstr "WooCommerce eCommerceConnect Data"
+msgstr "WooCommerce eCommerceConnect podaci"
 
 #. translators: %1$s and %2$s are opening and closing anchor tags.
 msgid ""
 "By using this extension, you may be storing personal data or sharing data "
-"with an external service. %1$sLearn more about how this works, including "
-"what you may want to include in your privacy policy.%2$s"
-msgstr ""
-"By using this extension, you may be storing personal data or sharing data "
-"with an external service. %1$sLearn more about how this works, including "
-"what you may want to include in your privacy policy.%2$s"
+"with an external service. %1$sLearn more about how this works, including what "
+"you may want to include in your privacy policy.%2$s"
+msgstr "Korištenjem ovog proširenja možete čuvati lične podatke ili dijeliti podatke sa eksternom uslugom. %1$sSaznajte više kako ovo funkcioniše, uključujući šta biste mogli uključiti u svoju politiku privatnosti.%2$s"
 
 msgid "Orders"
-msgstr "Orders"
+msgstr "Narudžbe"
 
 msgid "eCommerceConnect token"
 msgstr "eCommerceConnect token"
 
 msgid "eCommerceConnect Order Data Erased."
-msgstr "eCommerceConnect Order Data Erased."
+msgstr "eCommerceConnect podaci o narudžbi su obrisani."
 
 #. translators: %1$s and %2$s are opening and closing <strong> tags.
 msgid ""
 "Accept card payments on your website via %1$seCommerceConnect%2$s payment "
 "gateway"
-msgstr ""
-"Accept card payments on your website via %1$seCommerceConnect%2$s payment "
-"gateway"
+msgstr "Prihvatite kartična plaćanja na svojoj web stranici putem %1$seCommerceConnect%2$s payment gateway-a"
 
 msgid "Enable/Disable"
-msgstr "Enable/Disable"
+msgstr "Omogući/Onemogući"
 
 msgid "Enable eCommerceConnect"
-msgstr "Enable eCommerceConnect"
+msgstr "Omogući eCommerceConnect"
 
-msgid ""
-"This controls whether or not this gateway is enabled within WooCommerce."
-msgstr ""
-"This controls whether or not this gateway is enabled within WooCommerce."
+msgid "This controls whether or not this gateway is enabled within WooCommerce."
+msgstr "Ovo određuje da li je ovaj gateway omogućen u WooCommerce-u."
 
 msgid "Title"
-msgstr "Title"
+msgstr "Naslov"
 
 msgid "This controls the title which the user sees during checkout."
-msgstr "This controls the title which the user sees during checkout."
+msgstr "Ovo određuje naslov koji korisnik vidi tokom plaćanja."
 
 msgid "Description"
-msgstr "Description"
+msgstr "Opis"
 
 msgid "This controls the description which the user sees during checkout"
-msgstr "This controls the description which the user sees during checkout"
+msgstr "Ovo određuje opis koji korisnik vidi tokom plaćanja"
 
 msgid "Payment Gateway Action URL"
-msgstr "Payment Gateway Action URL"
+msgstr "URL akcije payment gateway-a"
 
 msgid "e.g. https://ecg.test.upc.ua or https://secure.upc.ua"
-msgstr "e.g. https://ecg.test.upc.ua or https://secure.upc.ua"
+msgstr "npr. https://ecg.test.upc.ua ili https://secure.upc.ua"
 
 msgid "eCommerceConnect Sandbox"
-msgstr "eCommerceConnect Sandbox"
+msgstr "eCommerceConnect testno okruženje"
 
 msgid "Place the payment gateway in test mode"
-msgstr "Place the payment gateway in test mode"
+msgstr "Postavite payment gateway u testni režim"
 
 msgid "Merchant ID"
-msgstr "Merchant ID"
+msgstr "ID trgovca"
 
 msgid "This is the Merchant ID, received from eCommerceConnect"
-msgstr "This is the Merchant ID, received from eCommerceConnect"
+msgstr "Ovo je ID trgovca, dobijen od eCommerceConnect-a"
 
 msgid "Terminal ID"
-msgstr "Terminal ID"
+msgstr "ID terminala"
 
 msgid "This is the Terminal ID, received from eCommerceConnect"
-msgstr "This is the Terminal ID, received from eCommerceConnect"
+msgstr "Ovo je ID terminala, dobijen od eCommerceConnect-a"
 
 msgid "Private key"
-msgstr "Private key"
+msgstr "Privatni ključ"
 
 msgid "This is the Private key, received from eCommerceConnect"
-msgstr "This is the Private key, received from eCommerceConnect"
+msgstr "Ovo je privatni ključ dobijen od eCommerceConnect-a"
 
 msgid "Private key for test mode"
-msgstr "Private key for test mode"
+msgstr "Privatni ključ za testni režim"
 
 msgid "This is the Private key for test mode, received from eCommerceConnect"
-msgstr "This is the Private key for test mode, received from eCommerceConnect"
+msgstr "Ovo je privatni ključ za testni režim, dobijen od eCommerceConnect-a"
 
 msgid "Work certificate"
-msgstr "Work certificate"
+msgstr "Produkcijski certifikat"
 
 msgid ""
 "This is the Work certificate for signature verification from UPC e-Commerce "
 "Connect payment gateway"
-msgstr ""
-"This is the Work certificate for signature verification from UPC e-Commerce "
-"Connect payment gateway"
+msgstr "Ovo je produkcijski certifikat za verifikaciju potpisa sa UPC e-Commerce Connect payment gateway-a"
 
 msgid "Test certificate"
-msgstr "Test certificate"
+msgstr "Testni certifikat"
 
 msgid ""
 "This is the Test certificate for signature verification from UPC e-Commerce "
 "Connect payment gateway"
-msgstr ""
-"This is the Test certificate for signature verification from UPC e-Commerce "
-"Connect payment gateway"
+msgstr "Ovo je testni certifikat za verifikaciju potpisa sa UPC e-Commerce Connect payment gateway-a"
 
 msgid "Status for Successful Withdrawal"
-msgstr "Status for Successful Withdrawal"
+msgstr "Status za uspješnu naplatu"
 
 msgid ""
 "Set the current status of your WooCommerce order for the corresponding "
 "transaction"
-msgstr ""
-"Set the current status of your WooCommerce order for the corresponding "
-"transaction"
+msgstr "Postavite trenutni status WooCommerce narudžbe za odgovarajuću transakciju"
 
 msgid "eCommerceConnect interface language"
-msgstr "eCommerceConnect interface language"
+msgstr "Jezik eCommerceConnect interfejsa"
 
 msgid "Set the payment gateway language"
-msgstr "Set the payment gateway language"
+msgstr "Postavite jezik payment gateway-a"
 
 msgid "Skip receipt page"
-msgstr "Skip receipt page"
+msgstr "Preskoči stranicu potvrde"
 
 msgid "Pre-authorization"
-msgstr "Pre-authorization"
+msgstr "Predautorizacija"
 
 msgid "For pre-authorization, check the checkbox"
-msgstr "For pre-authorization, check the checkbox"
+msgstr "Za predautorizaciju označite polje"
 
 #. translators: %s is the setting name.
 msgid "%s updated successfully."
-msgstr "%s updated successfully."
+msgstr "%s je uspješno ažuriran."
 
 #. translators: 1: Field name, 2: Field name again.
 msgid "%1$s cannot be empty. Please enter a %2$s."
-msgstr "%1$s cannot be empty. Please enter a %2$s."
+msgstr "%1$s ne može biti prazno. Molimo unesite %2$s."
 
 #. translators: %s is the field name.
 msgid "A %s is currently saved."
-msgstr "A %s is currently saved."
+msgstr "%s je trenutno sačuvan."
 
 #. translators: 1: Field label, 2: Field label again.
 msgid "No %1$s is currently saved. Please enter a %2$s."
-msgstr "No %1$s is currently saved. Please enter a %2$s."
+msgstr "Trenutno nije sačuvan nijedan %1$s. Molimo unesite %2$s."
 
 msgid "Sandbox Merchant ID currently in use"
-msgstr "Sandbox Merchant ID currently in use"
+msgstr "Sandbox Merchant ID trenutno u upotrebi"
 
 msgid "Sandbox Terminal ID currently in use"
-msgstr "Sandbox Terminal ID currently in use"
+msgstr "Sandbox Terminal ID trenutno u upotrebi"
 
 msgid "Your store uses a currency that ecommerceconnect doesn't support yet."
-msgstr "Your store uses a currency that ecommerceconnect doesn't support yet."
+msgstr "Vaša prodavnica koristi valutu koju ecommerceconnect još ne podržava."
 
 msgid "You forgot to fill your merchant ID."
-msgstr "You forgot to fill your merchant ID."
+msgstr "Zaboravili ste unijeti merchant ID."
 
 msgid "You forgot to fill your terminal ID."
-msgstr "You forgot to fill your terminal ID."
+msgstr "Zaboravili ste unijeti terminal ID."
 
 msgid ""
 "To use eCommerceConnect as a payment provider, you need to fix the problems "
 "below:"
-msgstr ""
-"To use eCommerceConnect as a payment provider, you need to fix the problems "
-"below:"
+msgstr "Da biste koristili eCommerceConnect kao provajdera plaćanja, potrebno je da riješite sljedeće probleme:"
 
 msgid "Return to payments"
-msgstr "Return to payments"
+msgstr "Vrati se na plaćanja"
 
 #. translators: %1$s is the return URL, %2$s is the transaction ID or order
 #. code shown in HTML.
@@ -226,78 +209,69 @@ msgid ""
 "Send this link to a <a href=\"%1$s\" target=\"_blank\" rel=\"noopener "
 "noreferrer\">UPC specialist</a> to return to the store after payment <span "
 "style=\"color: red\"><pre><code>%2$s</code></pre></span>"
-msgstr ""
-"Send this link to a <a href=\"%1$s\" target=\"_blank\" rel=\"noopener "
-"noreferrer\">UPC specialist</a> to return to the store after payment <span "
-"style=\"color: red\"><pre><code>%2$s</code></pre></span>"
+msgstr "Pošaljite ovaj link <a href=\"%1$s\" target=\"_blank\" rel=\"noopener noreferrer\">UPC specijalisti</a> za povratak u prodavnicu nakon plaćanja <span style=\"color: red\"><pre><code>%2$s</code></pre></span>"
 
 msgid "Gateway Disabled"
-msgstr "Gateway Disabled"
+msgstr "Gateway onemogućen"
 
 #. translators: %1$s and %2$s are opening and closing anchor or <strong> tags.
 msgid ""
 "Choose UAH as your store currency in %1$sGeneral Settings%2$s to enable the "
 "eCommerceCcnnect Gateway."
-msgstr ""
-"Choose UAH as your store currency in %1$s General Settings %2$s to enable the "
-"eCommerceCcnnect Gateway."
+msgstr "Izaberite UAH kao valutu prodavnice u %1$sGeneral Settings%2$s da biste omogućili eCommerceCcnnect Gateway."
 
 msgid "Purchase"
-msgstr "Purchase"
+msgstr "Plati"
 
 msgid "Back"
-msgstr "Back"
+msgstr "Nazad"
 
 msgid ""
 "Thank you for your order, please click the button below to pay with "
 "eCommerceConnect."
-msgstr ""
-"Thank you for your order, please click the button below to pay with "
-"eCommerceConnect."
+msgstr "Hvala na narudžbi, kliknite na dugme ispod da platite putem eCommerceConnect-a."
 
 msgid "Capture via UPC"
-msgstr "Capture via UPC"
+msgstr "Naplata putem UPC-a"
 
 msgid "Оплатити"
-msgstr "Оплатити"
+msgstr "Plati"
 
 msgid "Запит не відбувся: "
-msgstr "Запит не відбувся: "
+msgstr "Zahtjev nije uspio: "
 
 msgid "Captured via UPC Gateway"
-msgstr "Captured via UPC Gateway"
+msgstr "Naplaćeno putem UPC Gateway-a"
 
 msgid "Capture success. Order moved to Processing"
-msgstr "Capture success. Order moved to Processing"
+msgstr "Naplata uspješna. Narudžba je prebačena u obradu"
 
 msgid "Invalid response from UPC"
-msgstr "Invalid response from UPC"
+msgstr "Nevažeći odgovor od UPC-a"
 
 msgid "Settings"
-msgstr "Settings"
+msgstr "Postavke"
 
 msgid "Support"
-msgstr "Support"
+msgstr "Podrška"
 
 #. translators: %s is the anchor tag link to WooCommerce download page.
 msgid ""
-"WooCommerce eCommerceConnect Gateway requires WooCommerce to be installed "
-"and active. You can download %s here."
-msgstr ""
-"WooCommerce eCommerceConnect Gateway requires WooCommerce to be installed "
-"and active. You can download %s here."
+"WooCommerce eCommerceConnect Gateway requires WooCommerce to be installed and "
+"active. You can download %s here."
+msgstr "WooCommerce eCommerceConnect Gateway zahtijeva da WooCommerce bude instaliran i aktivan. Možete preuzeti %s ovdje."
 
 msgid "eCommerceConnect payment method"
-msgstr "eCommerceConnect payment method"
+msgstr "eCommerceConnect način plaćanja"
 
 msgid "Transaction Currency"
-msgstr "Transaction Currency"
+msgstr "Valuta transakcije"
 
 msgid "Select the currency to be used for this payment method (WooCommerce current: <strong>%s</strong>)"
-msgstr "Select the currency to be used for this payment method (WooCommerce current: <strong>%s</strong>)"
+msgstr "Izaberite valutu koja će se koristiti za ovaj način plaćanja (trenutna WooCommerce valuta: <strong>%s</strong>)"
 
 msgid "Alternative display currency (AltCurrency)"
-msgstr "Alternative display currency (AltCurrency)"
+msgstr "Alternativna valuta prikaza (AltCurrency)"
 
 msgid "Used for displaying price in another currency (must be USD or EUR). Used only for visual purposes."
-msgstr "Used for displaying price in another currency (must be USD or EUR). Used only for visual purposes."
+msgstr "Koristi se za prikaz cijene u drugoj valuti (mora biti USD ili EUR). Koristi se samo u vizuelne svrhe."

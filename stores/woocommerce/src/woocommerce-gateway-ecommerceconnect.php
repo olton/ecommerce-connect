@@ -22,13 +22,34 @@ define('WC_GATEWAY_ECOMMERCECONNECT_VERSION', '8.4.1');
 define('WC_GATEWAY_ECOMMERCECONNECT_URL', untrailingslashit(plugins_url(basename(plugin_dir_path(__FILE__)), basename(__FILE__))));
 define('WC_GATEWAY_ECOMMERCECONNECT_PATH', untrailingslashit(plugin_dir_path(__FILE__)));
 
+function woocommerce_ecommerceconnect_load_textdomain()
+{
+    $domain = 'woocommerce-gateway-ecommerceconnect';
+    $relative_lang_dir = dirname(plugin_basename(__FILE__)) . '/languages/';
+
+    load_plugin_textdomain($domain, false, $relative_lang_dir);
+
+    $locale = determine_locale();
+    $short_locale = preg_replace('/[_-].*$/', '', (string) $locale);
+
+    // Support short-locale translation files (for example "de.mo") when WordPress locale is regional (for example "de_DE").
+    if (!$short_locale || $short_locale === $locale) {
+        return;
+    }
+
+    $short_locale_mofile = plugin_dir_path(__FILE__) . 'languages/' . $domain . '-' . $short_locale . '.mo';
+    if (is_readable($short_locale_mofile)) {
+        load_textdomain($domain, $short_locale_mofile);
+    }
+}
+
 function woocommerce_ecommerceconnect_init()
 {
     if (!class_exists('WC_Payment_Gateway')) {
         return;
     }
 
-    load_plugin_textdomain('woocommerce-gateway-ecommerceconnect', false, dirname(plugin_basename(__FILE__)) . '/languages/');
+    woocommerce_ecommerceconnect_load_textdomain();
 
     require_once plugin_basename('includes/class-wc-gateway-ecommerceconnect.php');
     require_once plugin_basename('includes/class-wc-gateway-ecommerceconnect-privacy.php');

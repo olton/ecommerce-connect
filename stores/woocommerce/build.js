@@ -64,6 +64,28 @@ function runI18nAll(rootDir, stagedSrcDir) {
 	}
 }
 
+function ensureMoCoverage(stagedSrcDir) {
+	const languagesDir = path.join(stagedSrcDir, "languages");
+	if (!fs.existsSync(languagesDir)) {
+		throw new Error(`Languages directory not found in staging: ${languagesDir}`);
+	}
+
+	const poFiles = fs.readdirSync(languagesDir).filter((file) => file.endsWith(".po"));
+	if (poFiles.length === 0) {
+		throw new Error(`No .po files found in staging languages directory: ${languagesDir}`);
+	}
+
+	const missingMoFiles = poFiles
+		.map((poFile) => poFile.replace(/\.po$/, ".mo"))
+		.filter((moFile) => !fs.existsSync(path.join(languagesDir, moFile)));
+
+	if (missingMoFiles.length > 0) {
+		throw new Error(
+			`Missing compiled .mo files in staging package: ${missingMoFiles.join(", ")}. Run i18n build successfully before packaging.`
+		);
+	}
+}
+
 function calculateMd5(filePath) {
 	const buffer = fs.readFileSync(filePath);
 	return crypto.createHash("md5").update(buffer).digest("hex");
@@ -109,6 +131,7 @@ async function main() {
 	try {
 		fs.cpSync(srcDir, stagingSrcDir, { recursive: true });
 		runI18nAll(rootDir, stagingSrcDir);
+		ensureMoCoverage(stagingSrcDir);
 		await createZipFromDir(stagingSrcDir, archivePath);
 	} finally {
 		fs.rmSync(stagingDir, { recursive: true, force: true });
