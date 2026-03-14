@@ -233,14 +233,14 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
                     'min' => '0',
                 ),
             ),
-            'private_key' => array(
-                'title' => __('Private key', 'woocommerce-gateway-ecommerceconnect'),
+            'test_crt' => array(
+                'title' => __('Test certificate', 'woocommerce-gateway-ecommerceconnect'),
                 'type' => 'textarea',
-                'default' => $this->get_masked_secret_preview($this->id . '_private_key'),
+                'default' => $this->get_masked_secret_preview($this->id . '_test_crt'),
                 'description' => $this->get_private_key_status_description(
-                    $this->id . '_private_key',
-                    __('This is the Private key, received from eCommerceConnect', 'woocommerce-gateway-ecommerceconnect'),
-                    __('Private key', 'woocommerce-gateway-ecommerceconnect')
+                    $this->id . '_test_crt',
+                    __('This is the Test certificate for signature verification from UPC e-Commerce Connect payment gateway', 'woocommerce-gateway-ecommerceconnect'),
+                    __('Test certificate', 'woocommerce-gateway-ecommerceconnect')
                 ),
             ),
             'private_key_test' => array(
@@ -263,14 +263,14 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
                     __('Work certificate', 'woocommerce-gateway-ecommerceconnect')
                 ),
             ),
-            'test_crt' => array(
-                'title' => __('Test certificate', 'woocommerce-gateway-ecommerceconnect'),
+            'private_key' => array(
+                'title' => __('Private key', 'woocommerce-gateway-ecommerceconnect'),
                 'type' => 'textarea',
-                'default' => $this->get_masked_secret_preview($this->id . '_test_crt'),
+                'default' => $this->get_masked_secret_preview($this->id . '_private_key'),
                 'description' => $this->get_private_key_status_description(
-                    $this->id . '_test_crt',
-                    __('This is the Test certificate for signature verification from UPC e-Commerce Connect payment gateway', 'woocommerce-gateway-ecommerceconnect'),
-                    __('Test certificate', 'woocommerce-gateway-ecommerceconnect')
+                    $this->id . '_private_key',
+                    __('This is the Private key, received from eCommerceConnect', 'woocommerce-gateway-ecommerceconnect'),
+                    __('Private key', 'woocommerce-gateway-ecommerceconnect')
                 ),
             ),
             'custom_success_status' => [
