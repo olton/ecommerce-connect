@@ -300,3 +300,27 @@ msgstr "Alternative display currency (AltCurrency)"
 
 msgid "Used for displaying price in another currency (must be USD or EUR). Used only for visual purposes."
 msgstr "Used for displaying price in another currency (must be USD or EUR). Used only for visual purposes."
+
+msgid "Pay with eCommerceConnect (Debit/Credit Cards)"
+msgstr "Pay with eCommerceConnect (Debit/Credit Cards)"
+
+msgid "Enter a Gateway URL https://..."
+msgstr "Enter a Gateway URL https://..."
+
+msgid "This is the URL of the payment gateway where the payment form will be submitted. For test use <b>https://ecg.test.upc.ua</b>, for production use <b>https://secure.upc.ua</b>"
+msgstr "This is the URL of the payment gateway where the payment form will be submitted. For test use <b>https://ecg.test.upc.ua</b>, for production use <b>https://secure.upc.ua</b>"
+
+msgid "EUR Conversion Rate"
+msgstr "EUR Conversion Rate"
+
+msgid "Specify the conversion rate for EUR. Use dot (.) as decimal separator."
+msgstr "Specify the conversion rate for EUR. Use dot (.) as decimal separator."
+
+msgid "USD Conversion Rate"
+msgstr "USD Conversion Rate"
+
+msgid "Specify the conversion rate for USD. Use dot (.) as decimal separator."
+msgstr "Specify the conversion rate for USD. Use dot (.) as decimal separator."
+
+msgid "eCommerceConnect requires Payment Gateway URL to work"
+msgstr "eCommerceConnect requires Payment Gateway URL to work"

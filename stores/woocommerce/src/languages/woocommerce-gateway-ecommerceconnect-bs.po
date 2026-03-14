@@ -275,3 +275,27 @@ msgstr "Alternativna valuta prikaza (AltCurrency)"
 
 msgid "Used for displaying price in another currency (must be USD or EUR). Used only for visual purposes."
 msgstr "Koristi se za prikaz cijene u drugoj valuti (mora biti USD ili EUR). Koristi se samo u vizuelne svrhe."
+
+msgid "Pay with eCommerceConnect (Debit/Credit Cards)"
+msgstr "Platite putem eCommerceConnect-a (Debitne/Kreditne kartice)"
+
+msgid "Enter a Gateway URL https://..."
+msgstr "Unesite Gateway URL https://..."
+
+msgid "This is the URL of the payment gateway where the payment form will be submitted. For test use <b>https://ecg.test.upc.ua</b>, for production use <b>https://secure.upc.ua</b>"
+msgstr "Ovo je URL payment gateway-a na koji će forma za plaćanje biti poslana. Za test koristite <b>https://ecg.test.upc.ua</b>, za produkciju koristite <b>https://secure.upc.ua</b>"
+
+msgid "EUR Conversion Rate"
+msgstr "EUR kurs konverzije"
+
+msgid "Specify the conversion rate for EUR. Use dot (.) as decimal separator."
+msgstr "Unesite kurs konverzije za EUR. Koristite tačku (.) kao decimalni razdjelnik."
+
+msgid "USD Conversion Rate"
+msgstr "USD kurs konverzije"
+
+msgid "Specify the conversion rate for USD. Use dot (.) as decimal separator."
+msgstr "Unesite kurs konverzije za USD. Koristite tačku (.) kao decimalni razdjelnik."
+
+msgid "eCommerceConnect requires Payment Gateway URL to work"
+msgstr "eCommerceConnect zahtijeva Payment Gateway URL da bi radio"

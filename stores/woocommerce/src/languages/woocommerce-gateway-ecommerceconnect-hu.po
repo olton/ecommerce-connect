@@ -275,3 +275,27 @@ msgstr "Alternatív megjelenítési pénznem (AltCurrency)"
 
 msgid "Used for displaying price in another currency (must be USD or EUR). Used only for visual purposes."
 msgstr "Az ár másik pénznemben történő megjelenítésére szolgál (USD vagy EUR lehet). Kizárólag megjelenítési célra használatos."
+
+msgid "Pay with eCommerceConnect (Debit/Credit Cards)"
+msgstr "Fizessen eCommerceConnecttel (Betéti/Hitelkártyák)"
+
+msgid "Enter a Gateway URL https://..."
+msgstr "Adjon meg egy Gateway URL-t https://..."
+
+msgid "This is the URL of the payment gateway where the payment form will be submitted. For test use <b>https://ecg.test.upc.ua</b>, for production use <b>https://secure.upc.ua</b>"
+msgstr "Ez a payment gateway URL-je, ahová a fizetési űrlap elküldésre kerül. Teszthez használja a <b>https://ecg.test.upc.ua</b> címet, éles környezetben a <b>https://secure.upc.ua</b> címet"
+
+msgid "EUR Conversion Rate"
+msgstr "EUR átváltási árfolyam"
+
+msgid "Specify the conversion rate for EUR. Use dot (.) as decimal separator."
+msgstr "Adja meg az EUR átváltási árfolyamát. Tizedeselválasztónak pontot (.) használjon."
+
+msgid "USD Conversion Rate"
+msgstr "USD átváltási árfolyam"
+
+msgid "Specify the conversion rate for USD. Use dot (.) as decimal separator."
+msgstr "Adja meg az USD átváltási árfolyamát. Tizedeselválasztónak pontot (.) használjon."
+
+msgid "eCommerceConnect requires Payment Gateway URL to work"
+msgstr "Az eCommerceConnect működéséhez Payment Gateway URL szükséges"

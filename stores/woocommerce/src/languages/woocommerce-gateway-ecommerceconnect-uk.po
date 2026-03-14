@@ -306,3 +306,27 @@ msgstr "Альтернативна валюта відображення (AltCur
 
 msgid "Used for displaying price in another currency (must be USD or EUR). Used only for visual purposes."
 msgstr "Використовується для відображення ціни в іншій валюті (обов'язково USD або EUR). Використовується лише для візуальних цілей."
+
+msgid "Pay with eCommerceConnect (Debit/Credit Cards)"
+msgstr "Оплатіть через eCommerceConnect (дебетові/кредитні картки)"
+
+msgid "Enter a Gateway URL https://..."
+msgstr "Введіть URL платіжного шлюзу https://..."
+
+msgid "This is the URL of the payment gateway where the payment form will be submitted. For test use <b>https://ecg.test.upc.ua</b>, for production use <b>https://secure.upc.ua</b>"
+msgstr "Це URL платіжного шлюзу, куди буде відправлено платіжну форму. Для тесту використовуйте <b>https://ecg.test.upc.ua</b>, для продакшну використовуйте <b>https://secure.upc.ua</b>"
+
+msgid "EUR Conversion Rate"
+msgstr "Курс конвертації EUR"
+
+msgid "Specify the conversion rate for EUR. Use dot (.) as decimal separator."
+msgstr "Вкажіть курс конвертації для EUR. Використовуйте крапку (.) як десятковий роздільник."
+
+msgid "USD Conversion Rate"
+msgstr "Курс конвертації USD"
+
+msgid "Specify the conversion rate for USD. Use dot (.) as decimal separator."
+msgstr "Вкажіть курс конвертації для USD. Використовуйте крапку (.) як десятковий роздільник."
+
+msgid "eCommerceConnect requires Payment Gateway URL to work"
+msgstr "Для роботи eCommerceConnect потрібен URL платіжного шлюзу"

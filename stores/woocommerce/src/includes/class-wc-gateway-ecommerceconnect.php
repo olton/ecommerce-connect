@@ -134,13 +134,13 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
                 'title' => __('Description', 'woocommerce-gateway-ecommerceconnect'),
                 'type' => 'text',
                 'description' => __('This controls the description which the user sees during checkout', 'woocommerce-gateway-ecommerceconnect'),
-                'default' => 'Pay with eCommerceConnect (Debit/Credit Cards)',
+                'default' => __('Pay with eCommerceConnect (Debit/Credit Cards)', 'woocommerce-gateway-ecommerceconnect'),
                 'desc_tip' => true,
             ),
             'url' => array(
                 'title' => __('Payment Gateway Action URL', 'woocommerce-gateway-ecommerceconnect'),
                 'type' => 'text',
-                'placeholder' => 'Enter a Gateway URL https://...',
+                'placeholder' => __('Enter a Gateway URL https://...', 'woocommerce-gateway-ecommerceconnect'),
                 'description' => __('This is the URL of the payment gateway where the payment form will be submitted. For test use <b>https://ecg.test.upc.ua</b>, for production use <b>https://secure.upc.ua</b>', 'woocommerce-gateway-ecommerceconnect'),
             ),
             'testmode' => array(

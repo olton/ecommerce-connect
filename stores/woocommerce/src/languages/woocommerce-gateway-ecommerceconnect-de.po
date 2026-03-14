@@ -275,3 +275,27 @@ msgstr "Alternative Anzeigewährung (AltCurrency)"
 
 msgid "Used for displaying price in another currency (must be USD or EUR). Used only for visual purposes."
 msgstr "Wird zur Anzeige des Preises in einer anderen Währung verwendet (muss USD oder EUR sein). Wird nur für visuelle Zwecke verwendet."
+
+msgid "Pay with eCommerceConnect (Debit/Credit Cards)"
+msgstr "Bezahlen Sie mit eCommerceConnect (Debit-/Kreditkarten)"
+
+msgid "Enter a Gateway URL https://..."
+msgstr "Geben Sie eine Gateway-URL ein https://..."
+
+msgid "This is the URL of the payment gateway where the payment form will be submitted. For test use <b>https://ecg.test.upc.ua</b>, for production use <b>https://secure.upc.ua</b>"
+msgstr "Dies ist die URL des Zahlungsgateways, an die das Zahlungsformular gesendet wird. Für Tests verwenden Sie <b>https://ecg.test.upc.ua</b>, für die Produktion verwenden Sie <b>https://secure.upc.ua</b>"
+
+msgid "EUR Conversion Rate"
+msgstr "EUR-Umrechnungskurs"
+
+msgid "Specify the conversion rate for EUR. Use dot (.) as decimal separator."
+msgstr "Geben Sie den Umrechnungskurs für EUR an. Verwenden Sie einen Punkt (.) als Dezimaltrennzeichen."
+
+msgid "USD Conversion Rate"
+msgstr "USD-Umrechnungskurs"
+
+msgid "Specify the conversion rate for USD. Use dot (.) as decimal separator."
+msgstr "Geben Sie den Umrechnungskurs für USD an. Verwenden Sie einen Punkt (.) als Dezimaltrennzeichen."
+
+msgid "eCommerceConnect requires Payment Gateway URL to work"
+msgstr "eCommerceConnect benötigt eine Payment-Gateway-URL, um zu funktionieren"
