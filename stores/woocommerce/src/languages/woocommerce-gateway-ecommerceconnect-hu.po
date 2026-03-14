@@ -277,7 +277,7 @@ msgid "Used for displaying price in another currency (must be USD or EUR). Used 
 msgstr "Az ár másik pénznemben történő megjelenítésére szolgál (USD vagy EUR lehet). Kizárólag megjelenítési célra használatos."
 
 msgid "Pay with eCommerceConnect (Debit/Credit Cards)"
-msgstr "Fizessen eCommerceConnecttel (Betéti/Hitelkártyák)"
+msgstr "Fizessen eCommerceConnecttel (betéti/hitelkártyák)"
 
 msgid "Enter a Gateway URL https://..."
 msgstr "Adjon meg egy Gateway URL-t https://..."

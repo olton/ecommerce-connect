@@ -277,7 +277,7 @@ msgid "Used for displaying price in another currency (must be USD or EUR). Used 
 msgstr "Përdoret për të shfaqur çmimin në një monedhë tjetër (duhet të jetë USD ose EUR). Përdoret vetëm për qëllime vizuale."
 
 msgid "Pay with eCommerceConnect (Debit/Credit Cards)"
-msgstr "Paguani me eCommerceConnect (Kartë Debiti/Krediti)"
+msgstr "Paguani me eCommerceConnect (karta debiti/krediti)"
 
 msgid "Enter a Gateway URL https://..."
 msgstr "Vendosni një Gateway URL https://..."
