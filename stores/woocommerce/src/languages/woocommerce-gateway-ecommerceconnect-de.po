@@ -281,8 +281,8 @@ msgstr "Bezahlen Sie mit eCommerceConnect (Debit-/Kreditkarten)"
 msgid "Enter a Gateway URL https://..."
 msgstr "Geben Sie eine Gateway-URL ein https://..."
 
-msgid "This is the URL of the payment gateway where the payment form will be submitted. For test use <b>https://ecg.test.upc.ua</b>, for production use <b>https://secure.upc.ua</b>"
-msgstr "Dies ist die URL des Zahlungsgateways, an die das Zahlungsformular gesendet wird. Für Tests verwenden Sie <b>https://ecg.test.upc.ua</b>, für die Produktion verwenden Sie <b>https://secure.upc.ua</b>"
+msgid "This is the URL of the payment gateway where the payment form will be submitted."
+msgstr "Dies ist die URL des Zahlungsgateways, an die das Zahlungsformular gesendet wird."
 
 msgid "EUR Conversion Rate"
 msgstr "EUR-Umrechnungskurs"

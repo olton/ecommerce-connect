@@ -303,8 +303,8 @@ msgstr "Платете с eCommerceConnect (дебитни/кредитни ка
 msgid "Enter a Gateway URL https://..."
 msgstr "Въведете URL на платежния шлюз https://..."
 
-msgid "This is the URL of the payment gateway where the payment form will be submitted. For test use <b>https://ecg.test.upc.ua</b>, for production use <b>https://secure.upc.ua</b>"
-msgstr "Това е URL на платежния шлюз, към който ще бъде изпратена платежната форма. За тест използвайте <b>https://ecg.test.upc.ua</b>, за продукция използвайте <b>https://secure.upc.ua</b>"
+msgid "This is the URL of the payment gateway where the payment form will be submitted."
+msgstr "Това е URL на платежния шлюз, към който ще бъде изпратена платежната форма."
 
 msgid "EUR Conversion Rate"
 msgstr "Курс на конвертиране за EUR"

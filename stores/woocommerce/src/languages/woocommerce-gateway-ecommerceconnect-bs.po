@@ -281,8 +281,8 @@ msgstr "Platite putem eCommerceConnect-a (debitne/kreditne kartice)"
 msgid "Enter a Gateway URL https://..."
 msgstr "Unesite Gateway URL https://..."
 
-msgid "This is the URL of the payment gateway where the payment form will be submitted. For test use <b>https://ecg.test.upc.ua</b>, for production use <b>https://secure.upc.ua</b>"
-msgstr "Ovo je URL payment gateway-a na koji će forma za plaćanje biti poslana. Za test koristite <b>https://ecg.test.upc.ua</b>, za produkciju koristite <b>https://secure.upc.ua</b>"
+msgid "This is the URL of the payment gateway where the payment form will be submitted."
+msgstr "Ovo je URL payment gateway-a na koji će forma za plaćanje biti poslana."
 
 msgid "EUR Conversion Rate"
 msgstr "EUR kurs konverzije"

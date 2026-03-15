@@ -281,8 +281,8 @@ msgstr "Fizessen eCommerceConnecttel (betéti/hitelkártyák)"
 msgid "Enter a Gateway URL https://..."
 msgstr "Adjon meg egy Gateway URL-t https://..."
 
-msgid "This is the URL of the payment gateway where the payment form will be submitted. For test use <b>https://ecg.test.upc.ua</b>, for production use <b>https://secure.upc.ua</b>"
-msgstr "Ez a payment gateway URL-je, ahová a fizetési űrlap elküldésre kerül. Teszthez használja a <b>https://ecg.test.upc.ua</b> címet, éles környezetben a <b>https://secure.upc.ua</b> címet"
+msgid "This is the URL of the payment gateway where the payment form will be submitted."
+msgstr "Ez a payment gateway URL-je, ahová a fizetési űrlap elküldésre kerül."
 
 msgid "EUR Conversion Rate"
 msgstr "EUR átváltási árfolyam"
