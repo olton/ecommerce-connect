@@ -1,221 +1,115 @@
-# Welcome to UPC E-commerce Connect for WooCommerce
+# eCommerceConnect для WordPress (WooCommerce 8.3+ з підтримкою блоків)
 
-UPC E-commerce Connect is a set of plugins for Wordpress WooCommerce.
+## Системні вимоги
 
-## Build Chain Overview
+- **WordPress:** >= 6.3
+- **WooCommerce:** >= 8.3 (протестовано до 8.6)
+- **PHP:** >= 7.4
 
-`npm run build` in this package runs `node build.js` and now uses staging packaging.
+### Сумісність
+Цей плагін повністю сумісний з:
+- [WooCommerce Blocks](https://woo.com/document/cart-checkout-blocks-status/)
 
-What `build.js` does:
+---
 
-1. Reads version from `stores/woocommerce/package.json` (`version` field).
-2. Clears `stores/woocommerce/dist` (unless `-no-clear` is passed).
-3. Creates temporary staging folder at `stores/woocommerce/.build-staging/<id>/src`.
-4. Copies `stores/woocommerce/src` to staging.
-5. Runs `node scripts/i18n.mjs build --src-dir <staged-src>`.
-6. Creates ZIP from staged `src` using a cross-platform Node.js archiver implementation.
-7. Removes staging folder.
-8. Creates MD5 file for the ZIP.
+## Встановлення
 
-Build output:
+1. Завантажте плагін (потрібний zip архів) з [GitHub/Releases]().
+2. В адмін-панелі WordPress перейдіть в **Плагіни** і натисніть кнопку **Додати плагін**.
+3. Натисніть кнопку **Завантажити плагін** та оберіть архів з плагіном, який ви скачали на першому кроці, натисніть кнопку **Встановити зараз**.
+4. Якщо плагін встановлено вдало, ви побачите наступну сторінку з кнопкою **Увімкнути плагін**. Натисніть її щоб увімкнути плагін.
+5. Натисніть посилання **Налаштування** під назвою плагіна `eCommerceConnect Gateway`.
+6. Налаштуйте плагін відповідно до ваших вимог та збережіть зміни.
 
-1. `stores/woocommerce/dist/woocommerce-ecommerce-connect.<version>.zip`
-2. `stores/woocommerce/dist/woocommerce-ecommerce-connect.<version>.zip.md5`
+---
 
-## Versioning And Constants
+## Налаштування
 
-How version changes now work:
+1. Перейдіть у **WooCommerce → Налаштування → Платежі → eCommerceConnect** та натисніть **Керувати**
+2. Заповніть такі поля:
+   - **Merchant ID** (отриманий від UPC)
+   - **Terminal ID**
+   - **URL платіжного шлюзу** (наприклад: `https://ecg.test.upc.ua` для тестів)
+3. Активуйте **Тестовий режим**, якщо використовуєте тестове середовище
+4. За потреби активуйте **Pre-authorization** (кошти будуть спочатку заморожені)
+5. Встановіть **Порядок сортування** (Sort order)
+6. Введіть **Приватний ключ (Private Key)** у форматі PEM, включаючи заголовки та підписи (`-----BEGIN PRIVATE KEY-----` …)
+7. Для тестового середовища введіть тестовий ключ у відповідне поле (за наявності)
+8. Введіть **URL зворотного виклику (Webhook)** у UPC (наприклад: `https://example.com/?wc-api=wc_gateway_ecommerceconnect`)
+9. Виберіть **Основну валюту контракту**
+10. Виберіть **Альтернативну валюту (USD або EUR)** для розрахунку в іншій валюті
+11. Виберіть **Мову інтерфейсу платіжної сторінки** (UA, EN тощо)
 
-1. Update `version` in `stores/woocommerce/package.json`.
-2. Run build. ZIP/MD5 filenames are generated from this version.
+---
 
-Important: `build.js` currently does not modify plugin PHP files. It reads version only for archive naming.
+## Списання коштів після Pre-authorization
 
-Plugin header/constants are still maintained in `stores/woocommerce/src/woocommerce-gateway-ecommerceconnect.php`:
+- Якщо в налаштуваннях активовано **Pre-authorization**, кошти будуть **заморожені (hold)** після оплати
+- Замовлення отримає статус **Очікує списання** (On Hold)
+- Адміністратор може перейти на сторінку цього замовлення у **WooCommerce → Замовлення**
+- На сторінці зʼявиться **форма списання через UPC**
+- Після натискання кнопки, буде надіслано запит до UPC і замовлення отримає статус **Обробляється** (Processing)
 
-1. Header `Version: ...`
-2. `define('WC_GATEWAY_ECOMMERCECONNECT_VERSION', '...')`
-3. Other constants (`WC_GATEWAY_ECOMMERCECONNECT_URL`, `WC_GATEWAY_ECOMMERCECONNECT_PATH`) are static path/url constants and are not versioned.
+---
 
-Recommended release step:
+## Офіційна документація UPC
+- [API Checkout (українською)](https://docsecom.atlassian.net/wiki/spaces/DOCUK/pages/49644046/API+Checkout)
 
-1. Keep `package.json` version and `WC_GATEWAY_ECOMMERCECONNECT_VERSION` in sync.
-2. Keep plugin header `Version` in sync with the same value.
+---
 
+# eCommerceConnect for WordPress (WooCommerce 8.3+ with blocks support)
 
-## Installing Required Components
+## Requirements
 
-Required tools for full i18n+build flow:
+- **WordPress:** >= 6.3
+- **WooCommerce:** >= 8.3 (tested up to 8.6)
+- **PHP:** >= 7.4
 
-1. Node.js + npm
-2. WP-CLI (`wp`)
-3. GNU gettext tools (`msgmerge`, `msgfmt`)
+### Compatibility
+This plugin is fully compatible with:
+- [WooCommerce Blocks](https://woo.com/document/cart-checkout-blocks-status/)
 
-### Windows
+---
 
-1. Install Node.js LTS:
-	- Download installer from https://nodejs.org/en/download
-2. Install PHP (required by WP-CLI):
-	- Recommended: `winget install --id PHP.PHP`
-3. Install WP-CLI:
-	- Download `wp-cli.phar` from https://wp-cli.org/
-	- Place it as `wp`/`wp.cmd` in PATH (example: `C:\wp-cli\wp.cmd`).
-4. Install GNU gettext:
-	- Via MSYS2 or Chocolatey: `choco install gettext`
-    - Via Scoop: `scoop install gettext`
-5. Verify:
+## Installation
 
-```powershell
-node -v
-npm -v
-php -v
-wp --info
-msgmerge --version
-msgfmt --version
-```
+1. Download the plugin ZIP archive from [GitHub/Releases]().
+2. In the WordPress admin panel, go to **Plugins** and click **Add New Plugin**.
+3. Click **Upload Plugin**, choose the archive downloaded in step 1, and click **Install Now**.
+4. After successful installation, click **Activate Plugin**.
+5. Click **Settings** under the `eCommerceConnect Gateway` plugin name.
+6. Configure the plugin according to your requirements and save changes.
 
-### Linux (Red Hat Enterprise Linux)
+---
 
-1. Install Node.js + npm (example for Node 22 from NodeSource):
+## Configuration
 
-```bash
-sudo dnf module disable -y nodejs
-curl -fsSL https://rpm.nodesource.com/setup_22.x | sudo bash -
-sudo dnf install -y nodejs
-```
+1. Go to **WooCommerce → Settings → Payments → eCommerceConnect**, then click **Manage**
+2. Fill in the following fields:
+   - **Merchant ID** (provided by UPC)
+   - **Terminal ID**
+   - **Payment Gateway URL** (example: `https://ecg.test.upc.ua` for sandbox)
+3. Enable **Test mode** if using test environment
+4. Optionally enable **Pre-authorization** (funds will be held)
+5. Set **Sort order**
+6. Paste your **Private key (PEM format)** including headers (`-----BEGIN PRIVATE KEY-----` …)
+7. Enter test keys for sandbox if applicable
+8. Provide the **Callback URL (Webhook)** to UPC (example: `https://example.com/?wc-api=wc_gateway_ecommerceconnect`)
+9. Choose your **Contract currency**
+10. Choose **Alternative currency (USD or EUR)** for cross-currency processing
+11. Select **Interface language** (UA, EN, etc.) for the payment page
 
-2. Install PHP CLI + gettext + unzip/curl:
+---
 
-```bash
-sudo dnf install -y php-cli php-mbstring php-xml gettext curl unzip
-```
+## Capturing funds after Pre-authorization
 
-3. Install WP-CLI:
+- If **Pre-authorization** is enabled, funds will be **held (authorized)** after payment
+- The order will be assigned **On Hold** status
+- Admin can go to this order page via **WooCommerce → Orders**
+- A **Capture via UPC** form will appear on the order page
+- After clicking the capture button, the plugin will send a request to UPC and set order status to **Processing**
 
-```bash
-curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-chmod +x wp-cli.phar
-sudo mv wp-cli.phar /usr/local/bin/wp
-```
+---
 
-4. Verify:
-
-```bash
-node -v
-npm -v
-php -v
-wp --info
-msgmerge --version
-msgfmt --version
-```
-
-### Ubuntu Linux
-
-1. Install Node.js + npm:
-
-```bash
-curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
-sudo apt-get install -y nodejs
-```
-
-2. Install PHP CLI + gettext + curl/unzip:
-
-```bash
-sudo apt-get update
-sudo apt-get install -y php-cli php-mbstring php-xml gettext curl unzip
-```
-
-3. Install WP-CLI:
-
-```bash
-curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-chmod +x wp-cli.phar
-sudo mv wp-cli.phar /usr/local/bin/wp
-```
-
-4. Verify:
-
-```bash
-node -v
-npm -v
-php -v
-wp --info
-msgmerge --version
-msgfmt --version
-```
-
-
-## WooCommerce Local i18n Workflow (No Docker)
-
-The WooCommerce package includes local scripts to update and compile translation files directly in the project.
-
-### Prerequisites (Windows)
-
-Install these CLI tools and make sure they are available in your PATH:
-
-1. `wp` (WP-CLI)
-2. `msgmerge` and `msgfmt` (GNU gettext)
-
-Quick checks:
-
-```powershell
-wp --info
-msgmerge --version
-msgfmt --version
-```
-
-### Commands
-
-Run from monorepo root:
-
-```powershell
-npm run i18n:woocommerce
-```
-
-Or run from `stores/woocommerce`:
-
-```powershell
-npm run i18n:update-pot
-npm run i18n:update-po-all
-npm run i18n:compile-mo-all
-```
-
-One-shot all-in-one command:
-
-```powershell
-npm run i18n:all
-```
-
-### What each step does
-
-1. `i18n:update-pot`: generates `stores/woocommerce/src/languages/ecommerceconnect.pot` from source strings in `stores/woocommerce/src`.
-2. `i18n:update-po-all`: updates all `.po` files in `stores/woocommerce/src/languages` using the POT template.
-3. `i18n:compile-mo-all`: compiles all `.po` files into `.mo` files.
-
-### Typical edit cycle
-
-1. Change translatable strings in WooCommerce PHP source.
-2. Run `npm run i18n:all` in `stores/woocommerce`.
-3. Commit updated `.po` files.
-
-## Build Packaging (Staging)
-
-`npm run build` now uses a staging directory:
-
-1. Copies `src` into a temporary staging folder.
-2. Runs `i18n:build` against staged `src` (`--src-dir` mode).
-3. Creates ZIP from staged contents.
-4. Deletes staging folder.
-
-This keeps the working tree clean while still producing a ZIP that contains generated `.pot` and `.mo` files.
-
-Build-time tool behavior:
-
-1. If `wp` and `msgmerge` are available, POT/PO are refreshed before MO compilation.
-2. If `wp` is missing, POT/PO refresh is skipped, but MO files are still compiled from existing PO files.
-3. `msgfmt` is always required for build packaging.
-
-Repository policy:
-
-1. Keep `.po` files in git.
-2. Do not track generated `.pot` and `.mo` files.
+## Official UPC documentation
+- [API Checkout (English)](https://docsecom.atlassian.net/wiki/spaces/DOCEN/pages/49971442/API+Checkout+by+the+payment+page)

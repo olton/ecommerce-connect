@@ -63,12 +63,3 @@ jobs:
           target_commitish: ${{ github.sha }}
           generate_release_notes: true
           files: ${{ steps.collect_assets.outputs.files }}
-
-      - name: Create release without assets
-        if: steps.collect_assets.outputs.has_files != 'true'
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: assets-${{ github.run_number }}
-          name: Assets Build #${{ github.run_number }}
-          target_commitish: ${{ github.sha }}
-          generate_release_notes: true
