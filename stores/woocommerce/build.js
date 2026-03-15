@@ -64,6 +64,70 @@ function runI18nAll(rootDir, stagedSrcDir) {
 	}
 }
 
+function writeFixedBlocksAssetPhp(outputDir) {
+	const indexAssetPath = path.join(outputDir, "index.asset.php");
+	const randomVersion = crypto.randomBytes(16).toString("hex");
+	const content = `<?php return array(
+    'dependencies' => array(
+        'react', 
+        'wc-blocks-registry', 
+        'wc-settings', 
+        'wp-html-entities', 
+        'wp-i18n'
+    ), 
+    'version' => '${randomVersion}'
+);
+`;
+
+	fs.writeFileSync(indexAssetPath, content, "utf8");
+	return { indexAssetPath, randomVersion };
+}
+
+function buildBlocksAssets(rootDir, stagedSrcDir) {
+	const blocksEntryPath = path.join(stagedSrcDir, "blocks", "index.js");
+	if (!fs.existsSync(blocksEntryPath)) {
+		console.warn(`WooCommerce Blocks entry not found, skipping build: ${blocksEntryPath}`);
+		return;
+	}
+
+	const outputDir = path.join(stagedSrcDir, "build");
+	ensureDir(outputDir);
+	clearDirContents(outputDir);
+	const blocksEntryArg = path.relative(rootDir, blocksEntryPath).split(path.sep).join("/");
+	const outputDirArg = path.relative(rootDir, outputDir).split(path.sep).join("/");
+
+	const npmArgs = ["exec", "--yes", "--", "wp-scripts", "build", blocksEntryArg, "--output-path", outputDirArg];
+	const windowsNpmCommand = `npm exec --yes -- wp-scripts build ${blocksEntryArg} --output-path ${outputDirArg}`;
+	const result =
+		process.platform === "win32"
+			? spawnSync("cmd.exe", ["/d", "/s", "/c", windowsNpmCommand], {
+					cwd: rootDir,
+					stdio: "inherit",
+					shell: false,
+			  })
+			: spawnSync("npm", npmArgs, {
+					cwd: rootDir,
+					stdio: "inherit",
+					shell: false,
+			  });
+
+	if (result.error) {
+		throw new Error(`Failed to execute wp-scripts build: ${result.error.message}`);
+	}
+
+	if (result.status !== 0) {
+		throw new Error("Failed to build WooCommerce Blocks assets from src/blocks/index.js");
+	}
+
+	const builtIndexJs = path.join(outputDir, "index.js");
+	if (!fs.existsSync(builtIndexJs)) {
+		throw new Error("WooCommerce Blocks build completed, but required artifact is missing: build/index.js");
+	}
+
+	const { indexAssetPath, randomVersion } = writeFixedBlocksAssetPhp(outputDir);
+	console.log(`Blocks asset metadata generated: ${indexAssetPath} (version: ${randomVersion})`);
+}
+
 function replaceVersionPlaceholders(stagedSrcDir, version) {
 	const marker = "__VERSION__";
 	const allowedExtensions = new Set([".php", ".md"]);
@@ -179,6 +243,7 @@ async function main() {
 		console.log(
 			`Version placeholders replaced: ${replacementResult.placeholdersReplaced} in ${replacementResult.filesChanged} file(s)`
 		);
+		buildBlocksAssets(rootDir, stagingSrcDir);
 		runI18nAll(rootDir, stagingSrcDir);
 		ensureMoCoverage(stagingSrcDir);
 		await createZipFromDir(stagingSrcDir, archivePath);

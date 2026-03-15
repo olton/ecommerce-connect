@@ -3,16 +3,16 @@
 /**
  * Plugin Name: eCommerceConnect Gateway
  * Plugin URI: https://ecconnect.upc.ua
- * Description: UPC WooCommerce plugin enables you to easily accept payments through your Woocommerce store
+ * Description: UPC eCommerceConnect Gateway plugin enables you to easily accept payments through your WooCommerce store.
  * Author: upc.ua
- * Author URI: https://upc.ua
+ * Author URI: https://ecconnect.upc.ua/
  * Version: __VERSION__
  * Text Domain: woocommerce-gateway-ecommerceconnect
  * Domain Path: /languages
  * Requires at least: 6.3
- * Tested up to: 6.4
+ * Tested up to: 6.9.4
  * WC requires at least: 8.4
- * WC tested up to: 8.6
+ * WC tested up to: 10.6.1
  * Requires PHP: 7.4
  * PHP tested up to: 8.3
  */
@@ -45,11 +45,11 @@ function woocommerce_ecommerceconnect_load_textdomain()
 
 function woocommerce_ecommerceconnect_init()
 {
+    woocommerce_ecommerceconnect_load_textdomain();
+
     if (!class_exists('WC_Payment_Gateway')) {
         return;
     }
-
-    woocommerce_ecommerceconnect_load_textdomain();
 
     require_once plugin_basename('includes/class-wc-gateway-ecommerceconnect.php');
     require_once plugin_basename('includes/class-wc-gateway-ecommerceconnect-privacy.php');

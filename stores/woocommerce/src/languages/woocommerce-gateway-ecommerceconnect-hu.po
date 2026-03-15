@@ -25,9 +25,8 @@ msgstr "https://ecconnect.upc.ua"
 
 #. Description of the plugin
 msgid ""
-"UPC WooCommerce plugin enables you to easily accept payments through your "
-"Woocommerce store"
-msgstr "Az UPC WooCommerce bővítmény segítségével könnyen fogadhat fizetéseket a WooCommerce áruházában"
+"UPC eCommerceConnect Gateway plugin enables you to easily accept payments through your WooCommerce store."
+msgstr "Az UPC eCommerceConnect Gateway bővítmény segítségével könnyedén fogadhat fizetéseket a WooCommerce áruházában"
 
 #. Author of the plugin
 msgid "upc.ua"
@@ -319,3 +318,4 @@ msgstr "Adja meg az USD átváltási árfolyamát. Tizedeselválasztónak pontot
 
 msgid "eCommerceConnect requires Payment Gateway URL to work"
 msgstr "Az eCommerceConnect működéséhez Payment Gateway URL szükséges"
+
