@@ -236,7 +236,7 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
             ),
             'test_crt' => array(
                 'title' => __('Test certificate', 'woocommerce-gateway-ecommerceconnect'),
-                'type' => 'textarea',
+                'type' => 'ecommconnect_secret',
                 'default' => $this->get_masked_secret_preview($this->id . '_test_crt'),
                 'description' => $this->get_private_key_status_description(
                     $this->id . '_test_crt',
@@ -246,7 +246,7 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
             ),
             'private_key_test' => array(
                 'title' => __('Private key for test mode', 'woocommerce-gateway-ecommerceconnect'),
-                'type' => 'textarea',
+                'type' => 'ecommconnect_secret',
                 'default' => $this->get_masked_secret_preview($this->id . '_private_key_test'),
                 'description' => $this->get_private_key_status_description(
                     $this->id . '_private_key_test',
@@ -256,7 +256,7 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
             ),
             'work_crt' => array(
                 'title' => __('Work certificate', 'woocommerce-gateway-ecommerceconnect'),
-                'type' => 'textarea',
+                'type' => 'ecommconnect_secret',
                 'default' => $this->get_masked_secret_preview($this->id . '_work_crt'),
                 'description' => $this->get_private_key_status_description(
                     $this->id . '_work_crt',
@@ -266,7 +266,7 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
             ),
             'private_key' => array(
                 'title' => __('Private key', 'woocommerce-gateway-ecommerceconnect'),
-                'type' => 'textarea',
+                'type' => 'ecommconnect_secret',
                 'default' => $this->get_masked_secret_preview($this->id . '_private_key'),
                 'description' => $this->get_private_key_status_description(
                     $this->id . '_private_key',
@@ -314,6 +314,112 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
         );
     }
 
+    protected function get_secret_option_key_by_setting($setting_key)
+    {
+        $secret_fields = array(
+            'private_key' => $this->id . '_private_key',
+            'private_key_test' => $this->id . '_private_key_test',
+            'work_crt' => $this->id . '_work_crt',
+            'test_crt' => $this->id . '_test_crt',
+        );
+
+        return $secret_fields[$setting_key] ?? '';
+    }
+
+    public function generate_ecommconnect_secret_html($key, $data)
+    {
+        $field_key = $this->get_field_key($key);
+        $defaults = array(
+            'title' => '',
+            'disabled' => false,
+            'class' => '',
+            'css' => '',
+            'placeholder' => '',
+            'type' => 'text',
+            'desc_tip' => false,
+            'description' => '',
+            'custom_attributes' => array(),
+        );
+
+        $data = wp_parse_args($data, $defaults);
+        $secret_option_key = $this->get_secret_option_key_by_setting($key);
+        $masked_preview = $secret_option_key ? $this->get_masked_secret_preview($secret_option_key) : '';
+        $field_value = isset($this->settings[$key]) ? $this->settings[$key] : $masked_preview;
+        $custom_attributes = array();
+
+        if (!empty($data['custom_attributes']) && is_array($data['custom_attributes'])) {
+            foreach ($data['custom_attributes'] as $attribute => $attribute_value) {
+                $custom_attributes[] = esc_attr($attribute) . '="' . esc_attr($attribute_value) . '"';
+            }
+        }
+
+        if ($data['disabled']) {
+            $custom_attributes[] = 'disabled="disabled"';
+        }
+
+        $can_reveal_secret = current_user_can('manage_options');
+        $has_saved_secret = $secret_option_key && '' !== trim((string) get_option($secret_option_key, ''));
+        $secret_plain_value = $can_reveal_secret && $secret_option_key ? (string) get_option($secret_option_key, '') : '';
+        $secret_value_b64 = base64_encode($secret_plain_value);
+
+        ob_start();
+        ?>
+        <tr valign="top">
+            <th scope="row" class="titledesc">
+                <label for="<?php echo esc_attr($field_key); ?>"><?php echo wp_kses_post($data['title']); ?></label>
+                <?php echo $this->get_tooltip_html($data); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+            </th>
+            <td class="forminp">
+                <fieldset>
+                    <legend class="screen-reader-text"><span><?php echo wp_kses_post($data['title']); ?></span></legend>
+                    <textarea
+                        name="<?php echo esc_attr($field_key); ?>"
+                        id="<?php echo esc_attr($field_key); ?>"
+                        class="input-text regular-input <?php echo esc_attr($data['class']); ?>"
+                        style="<?php echo esc_attr($data['css']); ?>"
+                        placeholder="<?php echo esc_attr($data['placeholder']); ?>"
+                        rows="5"
+                        data-masked-preview="<?php echo esc_attr($masked_preview); ?>"
+                        <?php echo implode(' ', $custom_attributes); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+                    ><?php echo esc_textarea($field_value); ?></textarea>
+                    <?php if ($can_reveal_secret) : ?>
+                        <p>
+                            <button
+                                id="<?php echo esc_attr($field_key); ?>_reveal"
+                                type="button"
+                                class="button button-secondary ecommconnect-reveal-secret"
+                                data-target-id="<?php echo esc_attr($field_key); ?>"
+                                data-option-key="<?php echo esc_attr($secret_option_key); ?>"
+                                data-secret-value-b64="<?php echo esc_attr($secret_value_b64); ?>"
+                                data-show-label="<?php echo esc_attr__('Show value', 'woocommerce-gateway-ecommerceconnect'); ?>"
+                                data-hide-label="<?php echo esc_attr__('Hide value', 'woocommerce-gateway-ecommerceconnect'); ?>"
+                                data-loading-label="<?php echo esc_attr__('Loading...', 'woocommerce-gateway-ecommerceconnect'); ?>"
+                                data-empty-label="<?php echo esc_attr__('No saved value.', 'woocommerce-gateway-ecommerceconnect'); ?>"
+                                <?php disabled(!$has_saved_secret); ?>
+                            >
+                                <?php esc_html_e('Show value', 'woocommerce-gateway-ecommerceconnect'); ?>
+                            </button>
+                            <button
+                                type="button"
+                                class="button button-secondary ecommconnect-clear-secret"
+                                data-target-id="<?php echo esc_attr($field_key); ?>"
+                                data-reveal-button-id="<?php echo esc_attr($field_key); ?>_reveal"
+                                data-clear-label="<?php echo esc_attr__('Clear value', 'woocommerce-gateway-ecommerceconnect'); ?>"
+                            >
+                                <?php esc_html_e('Clear value', 'woocommerce-gateway-ecommerceconnect'); ?>
+                            </button>
+                            <span class="description ecommconnect-secret-feedback" aria-live="polite"></span>
+                        </p>
+                    <?php endif; ?>
+                    <?php echo $this->get_description_html($data); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+                </fieldset>
+            </td>
+        </tr>
+        <?php
+
+        return ob_get_clean();
+    }
+
     public function process_admin_options()
     {
         $hidenFieldKeyValues = array(
@@ -341,14 +447,12 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
                         sprintf(__('%s updated successfully.', 'woocommerce-gateway-ecommerceconnect'), $value)
                     );
                 } else {
-                    if (empty($current_saved_key)) {
-                        WC_Admin_Settings::add_error(
-                            sprintf(
-                                // translators: 1: Field name, 2: Field name again.
-                                __('%1$s cannot be empty. Please enter a %2$s.', 'woocommerce-gateway-ecommerceconnect'),
-                                $value,
-                                $value
-                            )
+                    if (!empty($current_saved_key)) {
+                        delete_option($value);
+
+                        WC_Admin_Settings::add_message(
+                            // translators: %s is the setting name.
+                            sprintf(__('%s cleared successfully.', 'woocommerce-gateway-ecommerceconnect'), $value)
                         );
                     }
                 }
@@ -370,14 +474,31 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
 
         $fingerprint = strtoupper(substr(hash('sha256', $current_value), 0, 12));
 
-        return "[SAVED SECRET]\nFingerprint: {$fingerprint}\nPaste a new value to replace and save changes.";
+        $saved_secret_label = __('[SAVED SECRET]', 'woocommerce-gateway-ecommerceconnect');
+        $fingerprint_label = __('Fingerprint', 'woocommerce-gateway-ecommerceconnect');
+        $replace_hint = __('Paste a new value to replace and save changes.', 'woocommerce-gateway-ecommerceconnect');
+
+        return sprintf(
+            "%s\n%s: %s\n%s",
+            $saved_secret_label,
+            $fingerprint_label,
+            $fingerprint,
+            $replace_hint
+        );
     }
 
     protected function is_masked_secret_preview($field_key, $value)
     {
         $preview = $this->get_masked_secret_preview($field_key);
 
-        return '' !== $preview && $preview === $value;
+        $normalize_line_endings = static function ($text) {
+            return str_replace(array("\r\n", "\r"), "\n", (string) $text);
+        };
+
+        $normalized_preview = trim($normalize_line_endings($preview));
+        $normalized_value = trim($normalize_line_endings($value));
+
+        return '' !== $normalized_preview && $normalized_preview === $normalized_value;
     }
 
     protected function sync_masked_secret_previews_to_settings()

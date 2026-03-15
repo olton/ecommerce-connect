@@ -168,6 +168,27 @@ msgstr "Aktivieren Sie das Kontrollkästchen für die Vorautorisierung"
 msgid "%s updated successfully."
 msgstr "%s erfolgreich aktualisiert."
 
+msgid "Paste a new value to replace and save changes."
+msgstr "Fügen Sie einen neuen Wert ein, um den aktuellen zu ersetzen, und speichern Sie die Änderungen."
+
+msgid "Show value"
+msgstr "Wert anzeigen"
+
+msgid "Clear value"
+msgstr "Wert"
+
+msgid "Hide value"
+msgstr "Wert ausblenden"
+
+msgid "Loading..."
+msgstr "Lädt..."
+
+msgid "No saved value."
+msgstr "Kein gespeicherter Wert."
+
+msgid "Unable to reveal saved value. Please try again."
+msgstr "Der gespeicherte Wert konnte nicht angezeigt werden. Bitte versuchen Sie es erneut."
+
 #. translators: 1: Field name, 2: Field name again.
 msgid "%1$s cannot be empty. Please enter a %2$s."
 msgstr "%1$s darf nicht leer sein. Bitte geben Sie ein %2$s ein."

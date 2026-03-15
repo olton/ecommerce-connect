@@ -182,6 +182,27 @@ msgstr "For pre-authorization, check the checkbox"
 msgid "%s updated successfully."
 msgstr "%s updated successfully."
 
+msgid "Paste a new value to replace and save changes."
+msgstr "Paste a new value to replace and save changes."
+
+msgid "Show value"
+msgstr "Show value"
+
+msgid "Clear value"
+msgstr "Clear"
+
+msgid "Hide value"
+msgstr "Hide value"
+
+msgid "Loading..."
+msgstr "Loading..."
+
+msgid "No saved value."
+msgstr "No saved value."
+
+msgid "Unable to reveal saved value. Please try again."
+msgstr "Unable to reveal saved value. Please try again."
+
 #. translators: 1: Field name, 2: Field name again.
 msgid "%1$s cannot be empty. Please enter a %2$s."
 msgstr "%1$s cannot be empty. Please enter a %2$s."

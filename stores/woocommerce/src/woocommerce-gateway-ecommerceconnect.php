@@ -181,9 +181,17 @@ add_action('admin_enqueue_scripts', function ($hook) {
             file_exists($admin_settings_js) ? (string) filemtime($admin_settings_js) : WC_GATEWAY_ECOMMERCECONNECT_VERSION,
             true
         );
+
+        wp_localize_script('ecommconnect-admin-settings', 'ecommconnect_admin_settings', [
+            'ajaxurl' => admin_url('admin-ajax.php'),
+            'nonce' => wp_create_nonce('ecommconnect_reveal_secret'),
+            'action' => 'ecommconnect_get_secret',
+            'errorText' => esc_html__('Unable to reveal saved value. Please try again.', 'woocommerce-gateway-ecommerceconnect'),
+        ]);
     }
 });
 add_action('wp_ajax_ecommconnect_capture', 'ecommconnect_handle_capture_ajax_callback');
+add_action('wp_ajax_ecommconnect_get_secret', 'ecommconnect_handle_get_secret_ajax_callback');
 
 function ecommconnect_handle_capture_ajax_callback()
 {
@@ -205,6 +213,37 @@ function ecommconnect_handle_capture_ajax_callback()
     } else {
         wp_send_json_error(['message' => 'Payment gateway not available']);
     }
+}
+
+function ecommconnect_handle_get_secret_ajax_callback()
+{
+    check_ajax_referer('ecommconnect_reveal_secret', 'security');
+
+    if (!current_user_can('manage_options')) {
+        wp_send_json_error([
+            'message' => esc_html__('You do not have permission to view this value.', 'woocommerce-gateway-ecommerceconnect'),
+        ], 403);
+    }
+
+    $option_key = sanitize_key(wp_unslash($_POST['option_key'] ?? ''));
+    $allowed_option_keys = array(
+        'ecommerceconnect_private_key',
+        'ecommerceconnect_private_key_test',
+        'ecommerceconnect_work_crt',
+        'ecommerceconnect_test_crt',
+    );
+
+    if (!in_array($option_key, $allowed_option_keys, true)) {
+        wp_send_json_error([
+            'message' => esc_html__('Invalid secret key requested.', 'woocommerce-gateway-ecommerceconnect'),
+        ], 400);
+    }
+
+    $secret_value = (string) get_option($option_key, '');
+
+    wp_send_json_success([
+        'value' => $secret_value,
+    ]);
 }
 
 add_action('template_redirect', function () {

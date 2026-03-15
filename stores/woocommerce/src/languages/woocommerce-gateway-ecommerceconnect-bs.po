@@ -168,6 +168,27 @@ msgstr "Za predautorizaciju označite polje"
 msgid "%s updated successfully."
 msgstr "%s je uspješno ažuriran."
 
+msgid "Paste a new value to replace and save changes."
+msgstr "Unesite novu vrijednost da zamijenite postojeću i sačuvate promjene."
+
+msgid "Show value"
+msgstr "Prikaži vrijednost"
+
+msgid "Clear value"
+msgstr "Očisti"
+
+msgid "Hide value"
+msgstr "Sakrij vrijednost"
+
+msgid "Loading..."
+msgstr "Učitavanje..."
+
+msgid "No saved value."
+msgstr "Nema sačuvane vrijednosti."
+
+msgid "Unable to reveal saved value. Please try again."
+msgstr "Ne mogu prikazati sačuvanu vrijednost. Molimo pokušajte ponovo."
+
 #. translators: 1: Field name, 2: Field name again.
 msgid "%1$s cannot be empty. Please enter a %2$s."
 msgstr "%1$s ne može biti prazno. Molimo unesite %2$s."

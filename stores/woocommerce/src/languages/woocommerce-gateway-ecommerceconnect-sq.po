@@ -168,6 +168,27 @@ msgstr "Për paraautorizim, shënoni kutinë"
 msgid "%s updated successfully."
 msgstr "%s u përditësua me sukses."
 
+msgid "Paste a new value to replace and save changes."
+msgstr "Ngjitni një vlerë të re për ta zëvendësuar dhe ruani ndryshimet."
+
+msgid "Show value"
+msgstr "Shfaq vlerën"
+
+msgid "Clear value"
+msgstr "Pastro"
+
+msgid "Hide value"
+msgstr "Fshihe vlerën"
+
+msgid "Loading..."
+msgstr "Duke ngarkuar..."
+
+msgid "No saved value."
+msgstr "Nuk ka vlerë të ruajtur."
+
+msgid "Unable to reveal saved value. Please try again."
+msgstr "Nuk u arrit të shfaqet vlera e ruajtur. Ju lutem provoni përsëri."
+
 #. translators: 1: Field name, 2: Field name again.
 msgid "%1$s cannot be empty. Please enter a %2$s."
 msgstr "%1$s nuk mund të jetë bosh. Ju lutem vendosni një %2$s."

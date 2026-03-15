@@ -168,6 +168,27 @@ msgstr "Előengedélyezéshez jelölje be a jelölőnégyzetet"
 msgid "%s updated successfully."
 msgstr "%s sikeresen frissítve."
 
+msgid "Paste a new value to replace and save changes."
+msgstr "Illesszen be egy új értéket a cseréhez, majd mentse a módosításokat."
+
+msgid "Show value"
+msgstr "Érték megjelenítése"
+
+msgid "Clear value"
+msgstr "Érték"
+
+msgid "Hide value"
+msgstr "Érték elrejtése"
+
+msgid "Loading..."
+msgstr "Betöltés..."
+
+msgid "No saved value."
+msgstr "Nincs mentett érték."
+
+msgid "Unable to reveal saved value. Please try again."
+msgstr "A mentett érték megjelenítése nem sikerült. Kérjük, próbálja újra."
+
 #. translators: 1: Field name, 2: Field name again.
 msgid "%1$s cannot be empty. Please enter a %2$s."
 msgstr "%1$s nem lehet üres. Kérjük, adjon meg egy %2$s értéket."
