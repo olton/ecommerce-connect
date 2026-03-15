@@ -22,6 +22,27 @@ jobs:
           node-version: current
           cache: npm
 
+      - name: Install i18n build tools (PHP, WP-CLI, gettext)
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          sudo apt-get update
+          sudo apt-get install -y php-cli php-mbstring php-xml gettext curl
+
+          curl -fsSL -o wp-cli.phar https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+          chmod +x wp-cli.phar
+          sudo mv wp-cli.phar /usr/local/bin/wp
+
+      - name: Verify i18n toolchain
+        shell: bash
+        run: |
+          set -euo pipefail
+          php -v
+          wp --info
+          msgmerge --version
+          msgfmt --version
+
       - name: Install dependencies
         run: npm ci
 
