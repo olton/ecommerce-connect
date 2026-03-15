@@ -12,8 +12,7 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "turbo run build",
-    "i18n:woocommerce": "npm run --workspace @ecommerce-connect/woocommerce i18n:all"
+    "build": "turbo run build"
   },
   "devDependencies": {
     "archiver": "^7.0.1",
