@@ -195,6 +195,42 @@ function ensureMoCoverage(stagedSrcDir) {
 	}
 }
 
+function removeTranslationSourceFiles(stagedSrcDir) {
+	let removedCount = 0;
+
+	function walk(dirPath) {
+		const entries = fs.readdirSync(dirPath, { withFileTypes: true });
+
+		for (const entry of entries) {
+			const fullPath = path.join(dirPath, entry.name);
+
+			if (entry.isDirectory()) {
+				walk(fullPath);
+				continue;
+			}
+
+			if (entry.name.endsWith(".po") || entry.name.endsWith(".pot")) {
+				fs.rmSync(fullPath, { force: true });
+				removedCount += 1;
+			}
+		}
+	}
+
+	walk(stagedSrcDir);
+
+	return removedCount;
+}
+
+function removeBlocksSourceDirectory(stagedSrcDir) {
+	const blocksDir = path.join(stagedSrcDir, "blocks");
+	if (!fs.existsSync(blocksDir)) {
+		return false;
+	}
+
+	fs.rmSync(blocksDir, { recursive: true, force: true });
+	return true;
+}
+
 function calculateMd5(filePath) {
 	const buffer = fs.readFileSync(filePath);
 	return crypto.createHash("md5").update(buffer).digest("hex");
@@ -246,6 +282,10 @@ async function main() {
 		buildBlocksAssets(rootDir, stagingSrcDir);
 		runI18nAll(rootDir, stagingSrcDir);
 		ensureMoCoverage(stagingSrcDir);
+		const removedBlocksSource = removeBlocksSourceDirectory(stagingSrcDir);
+		console.log(`Removed blocks source directory from package: ${removedBlocksSource ? "yes" : "no"}`);
+		const removedTranslationSources = removeTranslationSourceFiles(stagingSrcDir);
+		console.log(`Removed translation source files from package: ${removedTranslationSources}`);
 		await createZipFromDir(stagingSrcDir, archivePath);
 	} finally {
 		fs.rmSync(stagingDir, { recursive: true, force: true });

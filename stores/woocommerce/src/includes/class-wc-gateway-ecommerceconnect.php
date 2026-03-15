@@ -787,7 +787,6 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
                                         <?php esc_html_e('Copy link', 'woocommerce-gateway-ecommerceconnect'); ?>
                                 </button>
                             </div>
-                            <p class="description ecommconnect-copy-feedback" role="status" aria-live="polite"></p>
                     </div>
             <?php
             echo '<div class="ecommconnect-settings-page">';

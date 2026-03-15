@@ -312,11 +312,12 @@
 
       if (success) {
         button.textContent = copiedLabel;
-        showFeedback(wrapper, copiedLabel, false);
 
         window.setTimeout(function () {
           button.textContent = copyLabel;
         }, 1800);
+
+        showFeedback(wrapper, '', false);
 
         return;
       }
