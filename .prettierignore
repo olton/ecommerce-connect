@@ -2,7 +2,6 @@ node_modules/
 dist/
 coverage/
 .turbo/
-**/build/
 **/*.min.js
 **/*.min.css
 **/*.lock
