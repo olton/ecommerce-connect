@@ -7,10 +7,13 @@
   "type": "module",
   "scripts": {
     "start": "docker compose -f docker-compose.yml up",
+    "stop": "docker compose -f docker-compose.yml down",
     "build": "node build.js",
     "i18n:update-pot": "node scripts/i18n.mjs update-pot",
     "i18n:update-po-all": "node scripts/i18n.mjs update-po-all",
     "i18n:compile-mo-all": "node scripts/i18n.mjs compile-mo-all",
-    "i18n:all": "node scripts/i18n.mjs all"
+    "i18n:all": "node scripts/i18n.mjs all",
+    "lint": "oxlint .",
+    "lint:fix": "oxlint --fix ."
   }
 }

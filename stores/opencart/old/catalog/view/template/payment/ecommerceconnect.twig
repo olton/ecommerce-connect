@@ -1,0 +1,23 @@
+<fieldset>
+	<legend>{{ text_title }}</legend>
+	<p>
+		<b>{{ text_description }}</b>
+	</p>
+	<form name="checkout" method="POST" enctype="text/html" action="{{ url }}" accept-charset="UTF-8">
+
+		<input type="hidden" name="MerchantID" value="{{MerchantID}}"/>
+		<input type="hidden" name="TerminalID" value="{{TerminalID}}"/>
+		<input type="hidden" name="TotalAmount" value="{{TotalAmount}}"/>
+		<input type="hidden" name="Currency" value="{{Currency}}"/>
+		<input type="hidden" name="locale" value="{{Locale}}"/>
+		<input type="hidden" name="PurchaseTime" value="{{PurchaseTime}}"/>
+		<input type="hidden" name="OrderID" value="{{OrderID}}"/>
+		<input type="hidden" name="SD" value="{{Session}}"/>
+		<input type="hidden" name="Signature" value="{{Signature}}"/>
+		
+		<div class="d-inline-block pt-2 pd-2 w-100 text-end">
+			<button type="submit" id="button-confirm" class="btn btn-primary">{{ button_confirm }}</button>
+		</div>
+
+	</form>
+</fieldset>

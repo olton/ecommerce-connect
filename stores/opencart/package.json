@@ -1,8 +1,15 @@
 {
   "name": "@ecommerce-connect/opencart",
-  "version": "1.0.0",
-  "description": "Ecommerce Connect integration for OpenCart",
-  "author": "UPC Ecommerce",
+  "version": "2.0.0",
+  "description": "E-commerce Connect integration for OpenCart",
+  "author": "UPC E-commerce",
   "license": "MIT",
-  "main": "src/index.js"
+  "type": "module",
+  "scripts": {
+    "start": "docker compose -f docker-compose.yml up",
+    "stop": "docker compose -f docker-compose.yml down",
+    "build": "node build.js",
+    "lint": "oxlint .",
+    "lint:fix": "oxlint --fix ."
+  }
 }
