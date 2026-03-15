@@ -10,21 +10,19 @@ services:
       - "8080:80"
     environment:
       OPENCART_DB_HOST: db
-      OPENCART_DB_USER: admin
-      OPENCART_DB_PASSWORD: genby[eqkj
+      OPENCART_DB_USER: oc
+      OPENCART_DB_PASSWORD: "genby[eqkj"
       OPENCART_DB_NAME: opencart
-    volumes:
-      - ./opencart_data:/var/www/html
 
   db:
     image: mariadb:10.5
     container_name: opencart_db
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: genby[eqkj
+      MYSQL_ROOT_PASSWORD: "genby[eqkj"
       MYSQL_DATABASE: opencart
-      MYSQL_USER: admin
-      MYSQL_PASSWORD: genby[eqkj
+      MYSQL_USER: oc
+      MYSQL_PASSWORD: "genby[eqkj"
     volumes:
       - db_data:/var/lib/mysql
 
@@ -36,8 +34,7 @@ services:
       - "8081:80"
     environment:
       PMA_HOST: db
-      MYSQL_ROOT_PASSWORD: genby[eqkj
+      MYSQL_ROOT_PASSWORD: "genby[eqkj"
 
 volumes:
   db_data:
-  opencart_data:
