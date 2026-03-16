@@ -83,7 +83,7 @@ jobs:
             echo "EOF"
           } >> "$GITHUB_OUTPUT"
 
-      - name: Create release and upload assets
+      - name: Create release and upload assets to current repo
         if: steps.collect_assets.outputs.has_files == 'true'
         uses: softprops/action-gh-release@v2
         with:
@@ -92,3 +92,14 @@ jobs:
           target_commitish: ${{ github.sha }}
           body_path: RELEASE.md
           files: ${{ steps.collect_assets.outputs.files }}
+
+      # - name: Create release and upload assets to others repo
+      #   if: steps.collect_assets.outputs.has_files == 'true'
+      #   uses: softprops/action-gh-release@v2
+      #   with:
+      #     repository: your-org/your-release-repo
+      #     token: ${{ secrets.RELEASE_REPO_TOKEN }}
+      #     tag_name: v${{ steps.release_meta.outputs.version }}
+      #     name: Release v${{ steps.release_meta.outputs.version }}
+      #     body_path: RELEASE.md
+      #     files: ${{ steps.collect_assets.outputs.files }}          
