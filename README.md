@@ -9,7 +9,7 @@ UPC E-commerce Connect is a set of plugins for any stores to add a payment syste
 - [x] WooCommerce (Wordpress)
 - [ ] Shopify
 - [ ] PrestaShop
-- [ ] OpenCart
+- [x] OpenCart4
 - [ ] Magento
 - [ ] Joomla
 
