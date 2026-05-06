@@ -3,42 +3,25 @@
 class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
 {
     public $version;
-
     protected $data_to_send = array();
-
     protected $merchant_id;
-
     protected $terminal_id;
-
     protected $url;
-
+    protected $post_auth_url;
     protected $currency;
-
     protected $lang;
-
     protected $response_url;
-
     protected $available_currencies;
-
     protected $private_key;
-
     protected $private_key_test;
-
     protected $work_crt;
-
     protected $test_crt;
-
     protected $is_pre_autorization;
-
     protected $skip_form;
-
     protected $custom_success_status;
-
     protected $enable_alt_currency;
-
     protected $eurRate;
-
-    protected $usdRare;
+    protected $usdRate;
 
     public function __construct()
     {
@@ -74,6 +57,7 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
         $this->work_crt = get_option($this->id . '_work_crt');
         $this->test_crt = get_option($this->id . '_test_crt');
         $this->url = $this->get_option('url');
+        $this->post_auth_url = $this->get_option('post_auth_url');
         $this->title = $this->get_option('title');
         $this->response_url = add_query_arg('wc-api', strtolower(get_class($this)), home_url('/'));
         $this->description = $this->get_option('description');
@@ -81,7 +65,7 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
         $this->lang = $this->get_option('lang');
         $this->currency = $this->get_option('currency');
         $this->eurRate = $this->get_option('eur_conversion', 1);
-        $this->usdRare = $this->get_option('usd_conversion', 1);
+        $this->usdRate = $this->get_option('usd_conversion', 1);
         $this->skip_form = 'yes' === $this->get_option('skip_form') ? 'yes' : 'no';
         $this->is_pre_autorization = 'yes' === $this->get_option('is_pre_autorization') ? 'yes' : 'no';
         $this->custom_success_status = str_replace('wc-', '', $this->get_option('custom_success_status'));
@@ -177,6 +161,12 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
                 'type' => 'checkbox',
                 'description' => __('Place the payment gateway in test mode', 'woocommerce-gateway-ecommerceconnect'),
                 'default' => 'yes',
+            ),
+            'post_auth_url' => array(
+                'title' => __('Post-Authorization URL', 'woocommerce-gateway-ecommerceconnect'),
+                'type' => 'text',
+                'placeholder' => __('Enter a Post-Authorization URL https://...', 'woocommerce-gateway-ecommerceconnect'),
+                'description' => __('This is the URL of the post-authorization gateway where the payment form will be submitted.', 'woocommerce-gateway-ecommerceconnect'),
             ),
             'merchant_id' => array(
                 'title' => __('Merchant ID', 'woocommerce-gateway-ecommerceconnect'),
@@ -844,7 +834,7 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
             $rate = (float) $this->eurRate;
             $alt_total = round(($order_total / $rate) * 100);
         } else if ($alt_currency === 840) {
-            $rate = (float) $this->usdRare;
+            $rate = (float) $this->usdRate;
             $alt_total = round(($order_total / $rate) * 100);
         } else {
             $alt_total = $total_amount;
@@ -950,7 +940,7 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
             $ecommerceconnect_args_array[] = '<input type="hidden" name="' . esc_attr($key) . '" value="' . esc_attr($value) . '" />';
         }
 
-        echo '<form action="' . esc_url($this->url . '/go/pay') . '" method="post" id="ecommerceconnect_payment_form">';
+        echo '<form action="' . esc_url($this->url) . '" method="post" id="ecommerceconnect_payment_form">';
         echo implode('', $ecommerceconnect_args_array);
         echo '<input type="submit" class="button-alt" id="submit_ecommerceconnect_payment_form" value="' . esc_attr__('Purchase', 'woocommerce-gateway-ecommerceconnect') . "\"/>
 \t\t\t\t<a class=\"button btn alt btn-black\"\thref=\"" . esc_url($order->get_cancel_order_url()) . '">'
@@ -1035,7 +1025,7 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
 
         $postData = $this->getCaptureFormData($order, $amount);
 
-        $response = wp_remote_post($this->url . '/go/capture', [
+        $response = wp_remote_post($this->post_auth_url, [
             'headers' => [
                 'Content-Type' => 'application/x-www-form-urlencoded',
             ],
@@ -1046,7 +1036,7 @@ class WC_Gateway_eCommerceConnect extends WC_Payment_Gateway
         if (is_wp_error($response)) {
             wp_send_json_success([
                 'error' => true,
-                'message' => __('Запит не відбувся: ', 'woocommerce-gateway-ecommerceconnect') . $response->get_error_message(),
+                'message' => __('Request failed: ', 'woocommerce-gateway-ecommerceconnect') . $response->get_error_message(),
             ]);
         }
 
